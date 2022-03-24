@@ -38,14 +38,6 @@ html {
     color: var(--principal);
 }
 
-/*Grid*/
-
-body {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    min-height: 100vh
-}
-
 ul {
     list-style-type: none;
 }
@@ -56,6 +48,32 @@ a {
     display: inline-block;
 }
 
+/*Grid*/
+
+body {
+    display: grid;
+    grid-template-columns: 2;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh "header header"
+        "main main"
+        "footer footer"
+}
+
+header {
+    background-color: #000000;
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+main {
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+
+footer {
+    grid-row: 3/4;
+    grid-column: 1/2;
+}
 
 /*Helpers*/
 
@@ -74,10 +92,6 @@ a {
 }
 
 /*CSS header*/
-
-header {
-    background-color: #000000;
-}
 
 header .navbar {
     min-height: 10vh;
@@ -151,13 +165,39 @@ header .menu__item .menu__link {
     gap: 2rem;
 }
 
+/*animación de colores en los h1*/
+
 .section__container h1 {
     font-size: 6em;
     font-family: var(--font-secondary);
     letter-spacing: 1rem;
     color: blueviolet;
     text-align: center;
+    animation-name: h1;
+    animation-timing-function: ease-in;
+    animation-duration: 6s;
+    animation-delay: .5s;
+    animation-iteration-count: infinite;
 }
+
+@keyframes h1 {
+    0% {
+        color: blueviolet;
+    }
+
+    50% {
+        color: blue;
+    }
+
+    75% {
+        color: aquamarine;
+    }
+
+    100% {
+        color: pink;
+    }
+}
+
 
 .section__container h2 {
     font-size: 1.8em;
@@ -178,24 +218,20 @@ header .menu__item .menu__link {
     color: rgb(226, 43, 171);
     text-decoration: underline;
     text-align: center;
-
 }
 
 /*Footer*/
 
 .footer {
-
     min-height: 10vh;
     justify-content: center;
     align-items: center;
     padding: 2rem 0;
-    background-color: blueviolet;
+    background-image: linear-gradient(to bottom, blueviolet, rgb(68, 0, 255));
 }
-
 
 .footer__socialmedia {
     flex-basis: 50%;
-    align-items: center;
 
 }
 
@@ -231,15 +267,25 @@ header .menu__item .menu__link {
     flex-basis: 20%;
 }
 
+/*Animación en imagen de miembros*/
+
 .members__img {
-    width: 100%;
-    min-width: 40%;
-    padding-bottom: 1rem;
+    width: 80%;
+    min-width: 50%;
+    padding: .3rem;
+    background-color: rgb(247, 212, 250);
+    border-radius: 10rem;
+    transition: .6s ease-in;
+}
+
+.members__img:hover {
+    transform: rotate(1turn) scale(1.1, 1.1);
 }
 
 .members__name {
     font-size: 2em;
     color: rgb(226, 43, 211);
+    padding-top: 2rem;
     padding-bottom: 1rem;
 }
 
@@ -399,9 +445,11 @@ main {
         font-weight: lighter;
         letter-spacing: .5rem;
     }
+
     .section h2 {
         font-size: 2.4em;
     }
+
     .section p {
         font-size: 2.4em;
     }

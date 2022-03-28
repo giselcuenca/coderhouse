@@ -1,0 +1,501 @@
+/*Imports*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Dancing+Script&family=Roboto:wght@400;500&display=swap');
+
+
+
+/*Root Var(--)*/
+
+:root {
+    --principal: #ffffff;
+    --secondary: #000000;
+    /*color de textos*/
+    --font-primary: "Roboto";
+    --font-secondary: "Bowlby One SC";
+    --text-lg: 2em;
+    --text-md: 1.8em;
+
+}
+
+/* Reset CSS*/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/*Global*/
+
+html {
+    background-color: black;
+    font-size: 62.5%;
+    font-family: var(--font-primary);
+    color: var(--principal);
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+/*Grid*/
+
+body {
+    display: grid;
+    grid-template-columns: 2;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh "header header"
+        "main main"
+        "footer footer"
+}
+
+header {
+    background-color: #000000;
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+main {
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+
+footer {
+    grid-row: 3/4;
+    grid-column: 1/2;
+}
+
+/*Helpers*/
+
+.flex-row {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+/*CSS header*/
+
+header .navbar {
+    min-height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+header .logo {
+    flex-basis: 30%;
+}
+
+.logo__img {
+    width: 100%;
+    min-width: 200px;
+}
+
+header .menu {
+    flex-basis: 50%;
+    justify-content: space-between;
+    font-size: 1.3em;
+}
+
+header .menu__item:hover {
+    color: blueviolet;
+}
+
+header .menu__item .menu__link {
+    font-size: var(--text-md);
+    padding: 1rem;
+}
+
+/*CSS main*/
+
+.banner {
+    align-items: center;
+    justify-content: center;
+}
+
+.banner__img {
+    width: 100%;
+    min-width: 360px;
+    padding: 1em;
+    background-color: blueviolet;
+}
+
+/*Sections CSS (uso en general para secciones)*/
+
+.section {
+    gap: 2rem;
+    align-items: center;
+    padding: 3rem 0;
+}
+
+.section__picture {
+    flex-basis: 50%;
+    min-width: 360px;
+}
+
+.section__img {
+    width: 100%;
+    padding: 1rem;
+    background-color: aqua;
+}
+
+.section__description {
+    flex-basis: 50%;
+    color: var(--principal);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/*animación de colores en los h1*/
+
+.section__container h1 {
+    font-size: 6em;
+    font-family: var(--font-secondary);
+    letter-spacing: 1rem;
+    color: blueviolet;
+    text-align: center;
+    animation-name: h1;
+    animation-timing-function: ease-in;
+    animation-duration: 6s;
+    animation-delay: .5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes h1 {
+    0% {
+        color: blueviolet;
+    }
+
+    50% {
+        color: blue;
+    }
+
+    75% {
+        color: aquamarine;
+    }
+
+    100% {
+        color: pink;
+    }
+}
+
+
+.section__container h2 {
+    font-size: 1.8em;
+    font-weight: lighter;
+    font-style: italic;
+    color: rgb(166, 166, 226);
+    padding-bottom: 1rem;
+}
+
+.section__container p {
+    font-size: 1.6em;
+    text-align: justify;
+}
+
+.button {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(226, 43, 171);
+    text-decoration: underline;
+    text-align: center;
+}
+
+/*Footer*/
+
+.footer {
+    min-height: 10vh;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    background-image: linear-gradient(to bottom, blueviolet, rgb(68, 0, 255));
+}
+
+.footer__socialmedia {
+    flex-basis: 50%;
+
+}
+
+.footer__p {
+    font-size: 2em;
+    padding-bottom: 1rem;
+}
+
+.copyright {
+    font-size: 2em;
+}
+
+/*CSS About*/
+
+.members__tittle {
+    font-size: 3em;
+    font-family: var(--font-primary);
+    color: blueviolet;
+    padding-bottom: 3rem;
+}
+
+.members__info {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding-bottom: 3rem;
+    gap: 5rem;
+}
+
+.members__profile {
+    align-items: center;
+    text-align: center;
+    flex-basis: 20%;
+}
+
+/*Animación en imagen de miembros*/
+
+.members__img {
+    width: 80%;
+    min-width: 50%;
+    padding: .3rem;
+    background-color: rgb(247, 212, 250);
+    border-radius: 10rem;
+    transition: .6s ease-in;
+}
+
+.members__img:hover {
+    transform: rotate(1turn) scale(1.1, 1.1);
+}
+
+.members__name {
+    font-size: 2em;
+    color: rgb(226, 43, 211);
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.members__p {
+    font-size: 1.8em;
+}
+
+/*CSS tour*/
+.table {
+    width: 100%;
+    min-width: 50%;
+    justify-content: center;
+    padding-bottom: 3rem;
+}
+
+.table__info {
+    font-size: 3em;
+    color: aquamarine;
+    padding-bottom: 4rem;
+}
+
+.table__tittle {
+    font-size: 3em;
+    padding-bottom: 2rem;
+    text-align: center;
+    color: blueviolet;
+}
+
+.table__dates {
+    font-size: 2em;
+    font-weight: lighter;
+    padding-bottom: 2rem;
+}
+
+/*CSS media*/
+
+main {
+    background-image: url("../assets/image/background.jpg");
+}
+
+.playlist {
+    width: 100%;
+    min-width: 360px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.playlist__a {
+    flex-basis: 100%;
+}
+
+.playlist__h2 {
+    font-size: 3em;
+    padding-bottom: 1rem;
+    color: aquamarine;
+}
+
+.playlist__p {
+    font-size: 3em;
+    padding-bottom: 1rem;
+
+}
+
+/*CSS contact*/
+
+.form {
+    align-items: left;
+    padding-bottom: 4rem;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+}
+
+.contact__form {
+    width: 100%;
+}
+
+.form__sector {
+    padding-bottom: 2rem;
+}
+
+.contact__input {
+    font-size: 2em;
+}
+
+.contact__inside {
+    text-align: left;
+    font-size: 1.8em;
+    padding: 1rem 0 1rem .5rem;
+
+}
+
+.contact__checkbox {
+    font-size: 1.8rem;
+
+}
+
+.form__button {
+    width: 20%;
+    font-size: 3em;
+
+}
+
+.button_letter {
+    color: var(--principal);
+    background-color: blueviolet;
+    padding: 1rem 6rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+
+}
+
+
+/*Media query para responsive*/
+
+@media screen and (max-width:1024px) {
+    body {
+        padding: 0;
+    }
+
+    .menu {
+        font-size: 1em;
+    }
+
+    header {
+        padding: 2em;
+    }
+
+    header .navbar {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .banner {
+        padding: 0 1rem;
+    }
+
+    .section {
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .section__picture {
+        flex-grow: 1;
+        padding: 0 1rem
+    }
+
+    .section__description {
+        flex-grow: 1;
+        order: -1;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .section__container h1 {
+        font-size: 3.5em;
+        padding-bottom: 2rem;
+        font-weight: lighter;
+        letter-spacing: .5rem;
+    }
+
+    .section h2 {
+        font-size: 2.4em;
+    }
+
+    .section p {
+        font-size: 2.4em;
+    }
+
+    .footer__socialmedia {
+        padding: 1rem;
+    }
+
+    .copyright {
+        font-size: 1.8em;
+        padding-left: .5rem;
+    }
+
+    /*Media Query about*/
+
+    .members {
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .members__name {
+        font-size: 1.8em;
+    }
+
+    .members__p {
+        font-size: 1.6em;
+    }
+
+    /*Media Query media*/
+    .playlist {
+        padding: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    /*Media query Tour*/
+    .table {
+        padding: 1rem;
+    }
+
+    /*Media query contact*/
+    .contact__h2 .contact__p {
+        font-size: 3em;
+    }
+
+    .form {
+        padding: 1rem;
+        padding-bottom: 3rem;
+    }
+}

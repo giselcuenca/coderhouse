@@ -54,9 +54,7 @@ body {
     display: grid;
     grid-template-columns: 2;
     grid-template-rows: auto 1fr auto;
-    min-height: 100vh "header header"
-        "main main"
-        "footer footer"
+    min-height: 100vh;
 }
 
 header {
@@ -129,6 +127,7 @@ header .menu__item .menu__link {
 .banner {
     align-items: center;
     justify-content: center;
+    padding-bottom: 2rem;
 }
 
 .banner__img {
@@ -143,7 +142,7 @@ header .menu__item .menu__link {
 .section {
     gap: 2rem;
     align-items: center;
-    padding: 3rem 0;
+    padding: 4rem 0;
 }
 
 .section__picture {
@@ -168,7 +167,8 @@ header .menu__item .menu__link {
 /*animación de colores en los h1*/
 
 .section__container h1 {
-    font-size: 6em;
+    font-size: 5em;
+    font-weight: lighter;
     font-family: var(--font-secondary);
     letter-spacing: 1rem;
     color: blueviolet;
@@ -198,41 +198,81 @@ header .menu__item .menu__link {
     }
 }
 
-
 .section__container h2 {
-    font-size: 1.8em;
+    text-align: center;
+    font-size: 2em;
     font-weight: lighter;
     font-style: italic;
-    color: rgb(166, 166, 226);
-    padding-bottom: 1rem;
+    color: rgb(235, 223, 174);
+    padding-top: 2rem;
+}
+
+.section__h2:before {
+    content: "✨";
+}
+
+.section__h2:after {
+    content: "✨";
+}
+
+.section__description {
+    display: flex;
+    align-items: center;
 }
 
 .section__container p {
     font-size: 1.6em;
     text-align: justify;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 .button {
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
-    color: rgb(226, 43, 171);
-    text-decoration: underline;
+    color: rgb(0, 0, 0);
     text-align: center;
+    background-color: aquamarine;
+    width: 25rem;
+    padding: .5rem 0;
+    border-radius: 3rem;
+}
+
+.button:hover {
+    background-color: rgb(127, 225, 255)
+}
+
+.button:active {
+    background-color: rgb(44, 154, 187);
+    transform: translateY(3px);
 }
 
 /*Footer*/
 
 .footer {
-    min-height: 10vh;
-    justify-content: center;
+    display: flex;
+    min-height: 20vh;
+    justify-content: space-between;
     align-items: center;
     padding: 2rem 0;
     background-image: linear-gradient(to bottom, blueviolet, rgb(68, 0, 255));
 }
 
 .footer__socialmedia {
-    flex-basis: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis: 40%;
+}
 
+.footer__tittle {
+    font-size: 2em;
+    font-weight: lighter;
+}
+
+.footer__icon {
+    padding: 2rem;
+    min-width: 20%;
 }
 
 .footer__p {
@@ -240,17 +280,25 @@ header .menu__item .menu__link {
     padding-bottom: 1rem;
 }
 
-.copyright {
+.copyright__text {
     font-size: 2em;
+    font-weight: lighter;
 }
 
 /*CSS About*/
+
+.members {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+}
 
 .members__tittle {
     font-size: 3em;
     font-family: var(--font-primary);
     color: blueviolet;
-    padding-bottom: 3rem;
+    padding-bottom: 4rem;
 }
 
 .members__info {
@@ -270,8 +318,8 @@ header .menu__item .menu__link {
 /*Animación en imagen de miembros*/
 
 .members__img {
-    width: 80%;
-    min-width: 50%;
+    width: 90%;
+    min-width: 70%;
     padding: .3rem;
     background-color: rgb(247, 212, 250);
     border-radius: 10rem;
@@ -284,13 +332,13 @@ header .menu__item .menu__link {
 
 .members__name {
     font-size: 2em;
-    color: rgb(226, 43, 211);
+    color: blueviolet;
     padding-top: 2rem;
     padding-bottom: 1rem;
 }
 
 .members__p {
-    font-size: 1.8em;
+    font-size: 1.5em;
 }
 
 /*CSS tour*/
@@ -447,27 +495,44 @@ main {
     }
 
     .section h2 {
-        font-size: 2.4em;
+        font-size: 2.2em;
     }
 
     .section p {
-        font-size: 2.4em;
+        font-size: 2em;
     }
+
+    .members__tittle {
+        font-size: 2.5em;
+    }
+
+    .members__p {
+        font-size: .8em;
+    }
+
+    /*Media querie footer*/
 
     .footer__socialmedia {
         padding: 1rem;
+        justify-content: space-around;
+        flex-basis: 30%;
     }
 
-    .copyright {
+    .footer__tittle {
         font-size: 1.8em;
-        padding-left: .5rem;
+        padding-bottom: 2rem;
+    }
+
+    .copyright__text {
+        font-size: 1.8em;
+        padding: 1rem;
     }
 
     /*Media Query about*/
 
     .members {
         padding: 1rem;
-        flex-wrap: wrap;
+
     }
 
     .members__name {

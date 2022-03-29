@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/image/favicon.png" type="image/x-icon">
-
     <link rel="stylesheet" href="css/style.css">
     <title>Coldplay</title>
 </head>
@@ -37,7 +36,10 @@
             </ul>
         </nav>
     </header>
+
     <!--Fin del header-->
+    <!--Inicio de main-->
+
     <main>
         <section class="container flex-row">
             <picture class="banner">
@@ -48,7 +50,7 @@
             <article class="section__description">
                 <div class="section__container">
                     <h1>Welcome</h1>
-                    <h2>Welcome to the Coldplay fan website, featuring information, tour dates, videos and everything
+                    <h2 class="section__h2">Welcome to the Coldplay fan website, featuring information, tour dates, videos and everything
                         you need to know.</h2>
                     <p>Coldplay is an English rock band formed in London in 1996. The band's members are
                         vocalist/pianist
@@ -62,13 +64,11 @@
                 <img class="section__img" src="assets/image/coldplay.jpeg" alt="foto">
             </picture>
         </section>
-
-
         <section class="section flex-row container">
             <picture class="section__picture">
                 <img class="section__img" src="assets/image/musicofthespherescoldplay.jpg" alt="fotocd">
             </picture>
-            <article class="section__description">
+            <article class="section__description flex-column">
                 <div class="section__container">
                     <h1>Music of the Spheres</h1>
                     <p>Music of the Spheres is the ninth studio album by Coldplay. Released on 15 October
@@ -81,26 +81,35 @@
                         producer Jon Hopkins</p>
                 </div>
                 <div class="button">
-                    <a href="../GRIDEntrega 1_Coldplay_Cuenca/views/media.html" class="button"> LISTEN NOW</a>
+                    <a href="views/media.html" class="button"> LISTEN NOW</a>
                 </div>
             </article>
-
         </section>
     </main>
 
-    <footer class="footer flex-row">
-        <div class="footer__socialmedia flex row">
+    <!--Fin de main-->
+    <!--Inicio de footer-->
 
+    <footer class="footer flex-row">
+        <div class="footer__socialmedia flex-row container">
+            <h3 class="footer__tittle">Follow Coldplay</h3>
             <a href="https://open.spotify.com/artist/4gzpq5DPGxSnKTe4SA8HAU" target="_blank" class="footer_icon"> <img
                     src="assets/image/s.png" alt="Spotify"></a>
             <a href="https://www.deezer.com/mx/artist/892" target="_blank" class="footer_icon"> <img
                     src="assets/image/d.png" alt="Deezer"></a>
             <a href="https://www.instagram.com/coldplay/" target="_blank" class="footer_icon"> <img
                     src="assets/image/i.png" alt="instagram"></a>
+            <a href="https://www.youtube.com/channel/UCDPM_n1atn2ijUwHd0NNRQw" target="_blank" class="footer_icon"> <img
+                    src="assets/image/y.png" alt="Youtube"></a>
+            <a href="https://twitter.com/coldplay?s=20&t=K_DyV9EXTVVPDTHONQ2llg" target="_blank" class="footer_icon">
+                <img src="assets/image/t.png" alt="Twitter"></a>
         </div>
-        <p class="copyright">Copyright © Coldplay 2022. </p>
+        <div class="copyright container">
+            <p class="copyright__text">Copyright © Coldplay 2022</p>
+        </div>
     </footer>
 
+    <!--Fin de footer-->
 
 </body>
 

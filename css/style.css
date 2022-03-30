@@ -51,13 +51,10 @@ a {
 /*Grid*/
 
 body {
-    background-color: #000000;
     display: grid;
     grid-template-columns: 2;
     grid-template-rows: auto 1fr auto;
-    min-height: 100vh "header header"
-        "main main"
-        "footer footer"
+    min-height: 100vh;
 }
 
 header {
@@ -74,7 +71,6 @@ main {
 footer {
     grid-row: 3/4;
     grid-column: 1/2;
-    background-color: black;
 }
 
 /*Helpers*/
@@ -88,12 +84,10 @@ footer {
     flex-direction: column;
 }
 
-/*Lo quito para utilizar el conteiner de bootstrap*/
-/*{   
-.container 
+.container {
     max-width: 1080px;
     margin: 0 auto;
-}*/
+}
 
 /*CSS header*/
 
@@ -117,11 +111,10 @@ header .menu {
     flex-basis: 50%;
     justify-content: space-between;
     font-size: 1.3em;
-    color: white;
 }
 
 header .menu__item:hover {
-    color: blue;
+    color: blueviolet;
 }
 
 header .menu__item .menu__link {
@@ -129,42 +122,12 @@ header .menu__item .menu__link {
     padding: 1rem;
 }
 
-/*Bootstrap*/
-
-/*Carrousel*/
-
-.carruselcoldplay {
-    padding: 1rem;
-    background-color: blueviolet;
-}
-
-.carruselcoldplay h1 {
-    color: black;
-    background-color: blueviolet;
-}
-
-.carruselcoldplay h2 {
-    color: black;
-    background-color: rgb(226, 43, 217)
-}
-
-.membercard {
-    padding: 1rem;
-}
-
-.card-img-top {
-    padding: .8rem;
-    border-radius: 15rem;
-    background-color: blueviolet;
-}
-
-/*Fin de bootstrap*/
-
 /*CSS main*/
 
 .banner {
     align-items: center;
     justify-content: center;
+    padding-bottom: 2rem;
 }
 
 .banner__img {
@@ -179,7 +142,7 @@ header .menu__item .menu__link {
 .section {
     gap: 2rem;
     align-items: center;
-    padding: 3rem 0;
+    padding: 4rem 0;
 }
 
 .section__picture {
@@ -204,7 +167,8 @@ header .menu__item .menu__link {
 /*animación de colores en los h1*/
 
 .section__container h1 {
-    font-size: 6em;
+    font-size: 5em;
+    font-weight: lighter;
     font-family: var(--font-secondary);
     letter-spacing: 1rem;
     color: blueviolet;
@@ -235,53 +199,101 @@ header .menu__item .menu__link {
 }
 
 .section__container h2 {
-    font-size: 1.8em;
+    text-align: center;
+    font-size: 2em;
     font-weight: lighter;
     font-style: italic;
-    color: rgb(166, 166, 226);
-    padding-bottom: 1rem;
+    color: rgb(235, 223, 174);
+    padding-top: 2rem;
+}
+
+.section__h2:before {
+    content: "✨";
+}
+
+.section__h2:after {
+    content: "✨";
+}
+
+.section__description {
+    display: flex;
+    align-items: center;
 }
 
 .section__container p {
     font-size: 1.6em;
     text-align: justify;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 .button {
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
-    color: rgb(226, 43, 171);
-    text-decoration: underline;
+    color: rgb(0, 0, 0);
     text-align: center;
+    background-color: aquamarine;
+    width: 25rem;
+    padding: .5rem 0;
+    border-radius: 3rem;
+}
+
+.button:hover {
+    background-color: rgb(127, 225, 255)
+}
+
+.button:active {
+    background-color: rgb(44, 154, 187);
+    transform: translateY(3px);
 }
 
 /*Footer*/
+
 .footer {
-    min-height: 10vh;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-
+    display: flex;
+    min-height: 20vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    background-image: linear-gradient(to bottom, blueviolet, rgb(68, 0, 255));
 }
 
-.text {
+.footer__socialmedia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis: 40%;
+}
+
+.footer__tittle {
     font-size: 2em;
-    color: var(--principal);
+    font-weight: lighter;
 }
 
-.text2 {
-    padding-top: 2rem;
+.footer__icon {
+    padding: 2rem;
+    min-width: 20%;
+}
+
+.copyright__text {
     font-size: 2em;
-    color: #eb98e6;
+    font-weight: lighter;
 }
-
 
 /*CSS About*/
+
+.members {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+}
 
 .members__tittle {
     font-size: 3em;
     font-family: var(--font-primary);
     color: blueviolet;
-    padding-bottom: 3rem;
+    padding-bottom: 4rem;
 }
 
 .members__info {
@@ -296,6 +308,32 @@ header .menu__item .menu__link {
     align-items: center;
     text-align: center;
     flex-basis: 20%;
+}
+
+/*Animación en imagen de miembros*/
+
+.members__img {
+    width: 90%;
+    min-width: 70%;
+    padding: .3rem;
+    background-color: rgb(247, 212, 250);
+    border-radius: 10rem;
+    transition: .6s ease-in;
+}
+
+.members__img:hover {
+    transform: rotate(1turn) scale(1.1, 1.1);
+}
+
+.members__name {
+    font-size: 2em;
+    color: blueviolet;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.members__p {
+    font-size: 1.5em;
 }
 
 /*CSS tour*/
@@ -315,7 +353,7 @@ header .menu__item .menu__link {
 .table__tittle {
     font-size: 3em;
     padding-bottom: 2rem;
-    text-align: left;
+    text-align: center;
     color: blueviolet;
 }
 
@@ -413,7 +451,7 @@ main {
     .menu {
         font-size: 1em;
     }
-
+    
     header {
         padding: 2em;
     }
@@ -452,31 +490,44 @@ main {
     }
 
     .section h2 {
-        font-size: 2.4em;
+        font-size: 2.2em;
     }
 
     .section p {
-        font-size: 2.4em;
+        font-size: 2em;
     }
 
-    .carruselcoldplay {
-        padding-left: 1rem;
+    .members__tittle {
+        font-size: 2.5em;
     }
 
-    .footer {
+    .members__p {
+        font-size: .8em;
+    }
+
+    /*Media querie footer*/
+
+    .footer__socialmedia {
         padding: 1rem;
+        justify-content: space-around;
+        flex-basis: 30%;
     }
 
-    .copyright {
+    .footer__tittle {
         font-size: 1.8em;
-        padding-left: .5rem;
+        padding-bottom: 2rem;
+    }
+
+    .copyright__text {
+        font-size: 1.8em;
+        padding: 1rem;
     }
 
     /*Media Query about*/
 
     .members {
         padding: 1rem;
-        flex-wrap: wrap;
+
     }
 
     .members__name {
@@ -507,6 +558,4 @@ main {
         padding: 1rem;
         padding-bottom: 3rem;
     }
-
-
 }

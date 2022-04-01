@@ -1,0 +1,35 @@
+ /*TOUR*/
+ .table {
+     width: 100%;
+     min-width: 50%;
+     justify-content: center;
+     padding-bottom: 3rem;
+
+     &__info {
+         font-size: 3em;
+         color: aquamarine;
+         padding-bottom: 4rem;
+     }
+
+     &__tittle {
+         font-size: 3em;
+         padding-bottom: 2rem;
+         text-align: center;
+         color: blueviolet;
+     }
+
+     &__dates {
+         font-size: 2em;
+         font-weight: lighter;
+         padding-bottom: 2rem;
+     }
+
+ }
+
+ /*MEDIA QUERY TOUR*/
+
+ @media screen and (max-width:1024px) {
+     .table {
+         padding: 1rem;
+     }
+ }

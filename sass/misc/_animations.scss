@@ -1,0 +1,31 @@
+/*ANIMACIONES*/
+
+/*ANIMACION EN H1*/
+
+.section__container {
+    h1 {
+        animation-name: h1;
+        animation-timing-function: ease-in;
+        animation-duration: 6s;
+        animation-delay: .5s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes h1 {
+        0% {
+            color: blueviolet;
+        }
+
+        50% {
+            color: blue;
+        }
+
+        75% {
+            color: aquamarine;
+        }
+
+        100% {
+            color: pink;
+        }
+    }
+}

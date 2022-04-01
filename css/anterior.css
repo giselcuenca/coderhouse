@@ -1,24 +1,26 @@
 /*Imports*/
-
+/*
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Dancing+Script&family=Roboto:wght@400;500&display=swap');
-
+*/
 
 
 /*Root Var(--)*/
-
+/*
 :root {
     --principal: #ffffff;
     --secondary: #000000;
     /*color de textos*/
+/*
     --font-primary: "Roboto";
     --font-secondary: "Bowlby One SC";
     --text-lg: 2em;
     --text-md: 1.8em;
-
+    
 }
+*/
 
 /* Reset CSS*/
-
+/*
 *,
 *::before,
 *::after {
@@ -28,14 +30,15 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+*/
 
 /*Global*/
-
+/*
 html {
     background-color: black;
     font-size: 62.5%;
-    font-family: var(--font-primary);
-    color: var(--principal);
+    font-family: $font-primary;
+    color: $principal;
 }
 
 ul {
@@ -47,9 +50,9 @@ a {
     color: inherit;
     display: inline-block;
 }
-
+*/
 /*Grid*/
-
+/*
 body {
     display: grid;
     grid-template-columns: 2;
@@ -72,9 +75,10 @@ footer {
     grid-row: 3/4;
     grid-column: 1/2;
 }
+*/
 
 /*Helpers*/
-
+/*
 .flex-row {
     display: flex;
 }
@@ -88,9 +92,10 @@ footer {
     max-width: 1080px;
     margin: 0 auto;
 }
-
+*/
 /*CSS header*/
 
+/*
 header .navbar {
     min-height: 10vh;
     justify-content: space-between;
@@ -118,12 +123,13 @@ header .menu__item:hover {
 }
 
 header .menu__item .menu__link {
-    font-size: var(--text-md);
+    font-size: $text-md;
     padding: 1rem;
 }
+*/
 
 /*CSS main*/
-
+/*
 .banner {
     align-items: center;
     justify-content: center;
@@ -138,7 +144,7 @@ header .menu__item .menu__link {
 }
 
 /*Sections CSS (uso en general para secciones)*/
-
+/*
 .section {
     gap: 2rem;
     align-items: center;
@@ -156,20 +162,22 @@ header .menu__item .menu__link {
     background-color: aqua;
 }
 
-.section__description {
+.section__description { 
+    display: flex;
+    align-items: center;
     flex-basis: 50%;
-    color: var(--principal);
+    color: $principal;
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
 /*animación de colores en los h1*/
-
+/*
 .section__container h1 {
     font-size: 5em;
     font-weight: lighter;
-    font-family: var(--font-secondary);
+    font-family: $font-secondary;
     letter-spacing: 1rem;
     color: blueviolet;
     text-align: center;
@@ -179,7 +187,8 @@ header .menu__item .menu__link {
     animation-delay: .5s;
     animation-iteration-count: infinite;
 }
-
+*/
+/*
 @keyframes h1 {
     0% {
         color: blueviolet;
@@ -196,8 +205,8 @@ header .menu__item .menu__link {
     100% {
         color: pink;
     }
-}
-
+}*/
+/*
 .section__container h2 {
     text-align: center;
     font-size: 2em;
@@ -213,11 +222,6 @@ header .menu__item .menu__link {
 
 .section__h2:after {
     content: "✨";
-}
-
-.section__description {
-    display: flex;
-    align-items: center;
 }
 
 .section__container p {
@@ -246,9 +250,10 @@ header .menu__item .menu__link {
     background-color: rgb(44, 154, 187);
     transform: translateY(3px);
 }
-
+*/
 /*Footer*/
 
+/*
 .footer {
     display: flex;
     min-height: 20vh;
@@ -279,9 +284,11 @@ header .menu__item .menu__link {
     font-size: 2em;
     font-weight: lighter;
 }
+*/
+
 
 /*CSS About*/
-
+/*
 .members {
     display: flex;
     flex-wrap: wrap;
@@ -291,7 +298,7 @@ header .menu__item .menu__link {
 
 .members__tittle {
     font-size: 3em;
-    font-family: var(--font-primary);
+    font-family: $font-primary;
     color: blueviolet;
     padding-bottom: 4rem;
 }
@@ -309,9 +316,9 @@ header .menu__item .menu__link {
     text-align: center;
     flex-basis: 20%;
 }
-
+*/
 /*Animación en imagen de miembros*/
-
+/*
 .members__img {
     width: 90%;
     min-width: 70%;
@@ -335,8 +342,10 @@ header .menu__item .menu__link {
 .members__p {
     font-size: 1.5em;
 }
+*/
 
 /*CSS tour*/
+/*
 .table {
     width: 100%;
     min-width: 50%;
@@ -361,14 +370,15 @@ header .menu__item .menu__link {
     font-size: 2em;
     font-weight: lighter;
     padding-bottom: 2rem;
-}
+}*/
 
 /*CSS media*/
-
+/*
 main {
     background-image: url("../assets/image/background.jpg");
 }
-
+*/
+/*
 .playlist {
     width: 100%;
     min-width: 360px;
@@ -391,9 +401,10 @@ main {
     padding-bottom: 1rem;
 
 }
+*/
 
 /*CSS contact*/
-
+/*
 .form {
     align-items: left;
     padding-bottom: 4rem;
@@ -439,12 +450,13 @@ main {
     font-size: 2rem;
 
 }
-
+*/
 
 /*Media query para responsive*/
+/*@media screen and (max-width:1024px) (saque las {} para que no tire error)*/
 
-@media screen and (max-width:1024px) {
-    body {
+/*header*/
+    /*body {
         padding: 0;
     }
 
@@ -460,7 +472,10 @@ main {
         justify-content: center;
         flex-direction: column;
     }
+*/
 
+/*index*/
+/*
     .banner {
         padding: 0 1rem;
     }
@@ -495,18 +510,11 @@ main {
 
     .section p {
         font-size: 2em;
-    }
+    }*/
 
-    .members__tittle {
-        font-size: 2.5em;
-    }
-
-    .members__p {
-        font-size: .8em;
-    }
 
     /*Media querie footer*/
-
+    /*
     .footer__socialmedia {
         padding: 1rem;
         justify-content: space-around;
@@ -522,12 +530,16 @@ main {
         font-size: 1.8em;
         padding: 1rem;
     }
-
+*/
     /*Media Query about*/
-
+/*
     .members {
         padding: 1rem;
 
+    }
+
+    .members__tittle {
+        font-size: 2.5em;
     }
 
     .members__name {
@@ -537,19 +549,19 @@ main {
     .members__p {
         font-size: 1.6em;
     }
-
+*/
     /*Media Query media*/
-    .playlist {
+    /*.playlist {
         padding: 1rem;
         padding-bottom: 2rem;
-    }
+    }*/
 
-    /*Media query Tour*/
+    /*Media query Tour*//*
     .table {
         padding: 1rem;
-    }
+    }*/
 
-    /*Media query contact*/
+    /*Media query contact*//*
     .contact__h2 .contact__p {
         font-size: 3em;
     }
@@ -557,5 +569,5 @@ main {
     .form {
         padding: 1rem;
         padding-bottom: 3rem;
-    }
-}
+    }*/
+    

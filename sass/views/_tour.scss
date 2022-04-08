@@ -1,19 +1,23 @@
  /*TOUR*/
+ 
  .table {
+    
      width: 100%;
      min-width: 50%;
      justify-content: center;
-     padding-bottom: 3rem;
+     padding: map-get($paddings, large);
+     background-color: map-get($background-color , lightblack);
 
      &__info {
          font-size: 3em;
+         align-items: center;
          color: aquamarine;
-         padding-bottom: 4rem;
+         padding-bottom: map-get($paddings, xlarge)
      }
 
      &__tittle {
          font-size: 3em;
-         padding-bottom: 2rem;
+         padding-bottom: map-get($paddings, medium);
          text-align: center;
          color: blueviolet;
      }
@@ -21,7 +25,7 @@
      &__dates {
          font-size: 2em;
          font-weight: lighter;
-         padding-bottom: 2rem;
+         padding-bottom: map-get($paddings, medium);
      }
 
  }
@@ -30,6 +34,6 @@
 
  @media screen and (max-width:1024px) {
      .table {
-         padding: 1rem;
+         padding: map-get($paddings, xsmall);
      }
  }

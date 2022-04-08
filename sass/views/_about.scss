@@ -1,24 +1,22 @@
 /*ABOUT*/
 
 .members {
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 4rem;
-    padding-bottom: 6rem;
+    @include flex(column, space-between, center, 1rem,nowrap);
+    background-color: map-get($background-color , lightblack);
+    padding-top: map-get($paddings , xlarge);
+    padding-bottom: map-get($paddings , xxlarge);
 
     &__tittle {
         font-size: 3em;
         font-family: $font-primary;
         color: blueviolet;
-        padding-bottom: 4rem;
+        padding-bottom: map-get($paddings , xlarge);
     }
 
     &__info {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        padding-bottom: 3rem;
-        gap: 5rem;
+        @include flex(row, space-between, center,0,wrap);
+        padding-bottom:map-get($paddings , large);
+       
 
         .members__profile {
             align-items: center;
@@ -29,7 +27,7 @@
                 width: 90%;
                 min-width: 70%;
                 padding: .3rem;
-                background-color: rgb(247, 212, 250);
+                background-color: map-get($background-color , lightpink );
                 border-radius: 10rem;
                 transition: .6s ease-in;
 
@@ -41,8 +39,8 @@
             .members__name {
                 font-size: 2em;
                 color: blueviolet;
-                padding-top: 2rem;
-                padding-bottom: 1rem;
+                padding-top: map-get($paddings , medium);
+                padding-bottom: map-get($paddings , xsmall);
             }
 
             .members__p {
@@ -52,11 +50,14 @@
     }
 }
 
+
+
 /*MEDIA QUERY ABOUT*/
 
 @media screen and (max-width:1024px) {
     .members {
-        padding: 1rem;
+        
+        padding: map-get($paddings , xsmall);
 
         &__tittle {
             font-size: 2.5em;

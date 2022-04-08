@@ -2,24 +2,26 @@
 
 .form {
     align-items: left;
-    padding-bottom: 4rem;
+    padding-bottom: map-get($paddings , xlarge);
     flex-basis: 100%;
     flex-wrap: wrap;
 
     .contact__form {
         width: 100%;
+        padding: map-get($paddings , small);
 
         .form__sector {
-            padding-bottom: 2rem;
+            padding-bottom:map-get($paddings , medium);
 
             .contact__input {
                 font-size: 2em;
+                cursor: pointer;
             }
 
             .contact__inside {
                 text-align: left;
                 font-size: 1.8em;
-                padding: 1rem 0 1rem .5rem;
+                padding: map-get($paddings , xsmall)
             }
 
             .contact__checkbox {
@@ -31,10 +33,11 @@
         .form__button {
             width: 20%;
             font-size: 3em;
+           
 
             .button_letter {
                 color: $principal;
-                background-color: blueviolet;
+                background-color: map-get($background-color , blueviolet);
                 padding: 1rem 6rem;
                 border-radius: 1rem;
                 font-size: 2rem;
@@ -51,7 +54,7 @@
     }
 
     .form {
-        padding: 1rem;
-        padding-bottom: 3rem;
+        padding:map-get($paddings , xsmall);
+        padding-bottom:map-get($paddings , large);
     }
 }

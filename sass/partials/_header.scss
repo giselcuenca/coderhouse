@@ -2,9 +2,8 @@
 
 header .navbar {
     min-height: 10vh;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
+    @include flex(row, space-between, center, 0,wrap);
+    padding: map-get($paddings, medium);
 
     .logo {
         flex-basis: 30%;
@@ -17,17 +16,22 @@ header .navbar {
 
     .menu {
         flex-basis: 50%;
-        justify-content: space-between;
+        @include flex(row, space-between, center, 2rem, nowrap);
         font-size: 1.3em;
 
-        &__item:hover {
-            color: blueviolet;
+        .menu__item {
+            border: none;
 
-        }
+            &--active {
+                @extend .menu__item;
+                color: blueviolet;
+                border-bottom: .2rem solid blueviolet;
+            }
 
-        &__link {
-            font-size: $text-md;
-            padding: 1rem;
+            .menu__link {
+                font-size: $text-md;
+                padding: map-get($paddings, xsmall);
+            }
         }
     }
 }

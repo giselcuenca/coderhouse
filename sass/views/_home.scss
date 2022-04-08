@@ -8,15 +8,15 @@
     &__img {
         width: 100%;
         min-width: 360px;
-        padding: 1em;
-        background-color: blueviolet;
+        padding: map-get($paddings , xsmall );
+        background-color: map-get($background-color, blueviolet );
     }
 }
 
 .section {
-    gap: 2rem;
-    align-items: center;
-    padding: 4rem 0;
+    @include flex(row, space-between, center, 2rem,nowrap);
+    background-color: map-get($background-color , lightblack);
+    padding: map-get($paddings, xlarge);
 
     &__picture {
         flex-basis: 50%;
@@ -24,43 +24,27 @@
 
         .section__img {
             width: 100%;
-            padding: 1rem;
-            background-color: aqua;
+            padding:  map-get($paddings, xsmall);
+            background-color: map-get($background-color, aquamarine );
         }
     }
 
     &__description {
-        display: flex;
-        align-items: center;
+        @include flex(column, space-between, center, 2rem,wrap);
         flex-basis: 50%;
         color: $principal;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
 
         .section__container {
             h1 {
-                font-size: 5em;
-                font-weight: lighter;
+                @include tittles-texts ($font-style: normal, $font-size:5em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
                 font-family: $font-secondary;
-                letter-spacing: 1rem;
                 color: blueviolet;
-                text-align: center;
-                animation-name: h1;
-                animation-timing-function: ease-in;
-                animation-duration: 6s;
-                animation-delay: .5s;
-                animation-iteration-count: infinite;
             }
 
             h2 {
-                text-align: center;
-                font-size: 2em;
-                font-weight: lighter;
-                font-style: italic;
+                @include tittles-texts ($font-style: italic,$font-size:2em, $font-weight: lighter, $letter-spacing: 0, $text-align:center);
                 color: rgb(235, 223, 174);
-                padding-top: 2rem;
-
+                padding:  map-get($paddings, small)
             }
 
             .section__h2:before {
@@ -72,31 +56,30 @@
             }
 
             p {
-                font-size: 1.6em;
-                text-align: justify;
-                padding-top: 3rem;
-                padding-bottom: 3rem;
+                @include tittles-texts ($font-style: normal, $font-size:1.6em, $letter-spacing: 0.1rem, $text-align:justify);
+                padding:  map-get($paddings, xsmall);
             }
         }
 
         .button {
             font-size: 1.3em;
             font-weight: bold;
-            color: rgb(0, 0, 0);
+            color: $secondary;
             text-align: center;
-            background-color: aquamarine;
+            background-color: map-get($background-color , aquamarine );
             width: 25rem;
-            padding: .5rem 0;
+            padding:  map-get($paddings, tiny-special);
             border-radius: 3rem;
 
             &:hover {
-                background-color: rgb(127, 225, 255)
+                background-color: map-get($background-color , lightblue );
             }
 
             &:active {
-                background-color: rgb(44, 154, 187);
+                background-color: map-get($background-color , lightblue );
                 transform: translateY(3px);
             }
+            
         }
 
 
@@ -106,11 +89,9 @@
 /*MEDIA QUERY INDEX*/
 
 @media screen and (max-width:1024px) {
-    .banner {
-        padding: 0 1rem;
-    }
-
+    
     .section {
+    
         flex-wrap: wrap;
         align-items: center;
 
@@ -123,11 +104,11 @@
             flex-grow: 1;
             order: -1;
             align-items: center;
-            padding: 1rem;
+            padding: map-get($paddings, xsmall);
 
             .section__container {
                 h1 {
-                    font-size: 3.5em;
+                    font-size: 3em;
                     padding-bottom: 2rem;
                     font-weight: lighter;
                     letter-spacing: .5rem;

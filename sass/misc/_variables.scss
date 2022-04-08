@@ -1,11 +1,47 @@
 /*VARIABLES*/
 
+/*COLOR PRINCIPALES*/
 $principal: #ffffff;
 $secondary: #000000;
 
-/*COLOR DE TEXTOS*/
-
+/*FONTS AND SIZES*/
 $font-primary: "Roboto";
 $font-secondary: "Bowlby One SC";
 $text-lg: 2em;
 $text-md: 1.8em;
+
+/*MAPS*/
+
+/*Paddings for content*/
+
+$paddings:(
+    xxlarge: 6rem,
+    xlarge: 4rem,
+    large:3rem,
+    medium: 2rem,
+    small: 1.5rem,
+    xsmall: 1rem,
+    tiny-special:.5rem 0 
+);
+
+@each $var, $val in $paddings {
+    .padding-#{$var}{
+        padding:#{$val};
+    }
+}
+
+/*background colors for paddings*/
+
+$background-color:(
+    Blueviolet: blueviolet,
+    aquamarine: aquamarine,
+    lightblue: rgb(44, 154, 187),
+    lightpink: rgb(247, 212, 250),
+    lightblack: rgba(1, 1, 1, 0.916),
+);
+
+@each $var, $val in $background-color {
+    .background-color-#{$var}{
+        background-color:#{$val};
+    }
+}

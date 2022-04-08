@@ -3,22 +3,21 @@
 .playlist {
     width: 100%;
     min-width: 360px;
-    justify-content: center;
-    flex-wrap: wrap;
-
+    @include flex(row, space-between, center, 0,wrap);
+    
     &__a {
         flex-basis: 100%;
     }
 
     &__h2 {
         font-size: 3em;
-        padding-bottom: 1rem;
+        padding-top: map-get($paddings , large);
         color: aquamarine;
     }
 
     &__p {
         font-size: 3em;
-        padding-bottom: 1rem;
+        padding-bottom: map-get($paddings , xsmall);
     }
 }
 
@@ -27,8 +26,8 @@
 @media screen and (max-width:1024px) {
 
     .playlist {
-        padding: 1rem;
-        padding-bottom: 2rem;
+        padding: map-get($paddings , xsmall);
+        padding-bottom: map-get($paddings , medium)
     }
 
 }

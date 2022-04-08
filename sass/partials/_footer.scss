@@ -1,17 +1,13 @@
 /*FOOTER*/
 
 .footer {
-    display: flex;
+    @include flex(row, space-between, center, 2rem,wrap);
     min-height: 20vh;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 0;
+    padding: map-get($paddings, xsmall);
     background-image: linear-gradient(to bottom, blueviolet, rgb(68, 0, 255));
 
     &__socialmedia {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        @include flex(row, space-between, center,wrap);
         flex-basis: 40%;
 
         .footer__tittle {
@@ -19,7 +15,7 @@
             font-weight: lighter;
 
             .footer__icon {
-                padding: 2rem;
+                padding: map-get($paddings, medium);
                 min-width: 20%;
             }
         }

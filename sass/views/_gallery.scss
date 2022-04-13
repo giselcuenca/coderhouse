@@ -1,0 +1,17 @@
+/*CONTACT*/
+.gallery_tittle {
+    @include tittles-texts ($font-style: normal, $font-size:5em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
+    font-family: $font-secondary;
+    color: blueviolet;
+}
+.gallery__imgs {
+    background-color: black;
+        @include flex(column, space-around,flex-start, 0, wrap);
+        padding-bottom: map-get($paddings, xlarge);
+
+        .gallery__img {
+            width: 100%;
+            min-width: 360px;
+            padding: map-get($paddings, large);
+        }
+    }

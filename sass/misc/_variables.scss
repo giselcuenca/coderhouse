@@ -21,6 +21,7 @@ $paddings:(
     medium: 2rem,
     small: 1.5rem,
     xsmall: 1rem,
+    tiny:.5rem,
     tiny-special:.5rem 0 
 );
 
@@ -38,6 +39,7 @@ $background-color:(
     lightblue: rgb(44, 154, 187),
     lightpink: rgb(247, 212, 250),
     lightblack: rgba(1, 1, 1, 0.916),
+    lightgrey: rgba(255, 255, 240, 0.061)
 );
 
 @each $var, $val in $background-color {

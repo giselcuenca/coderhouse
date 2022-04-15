@@ -29,6 +29,7 @@ a {
 }
 
 /*GRID*/
+/*grid general*/
 
 body {
     display: grid;
@@ -43,7 +44,7 @@ header {
     grid-column: 1/2;
 }
 
-main { 
+main {
     background-image: url("../assets/image/background.jpg");
     grid-row: 2/3;
     grid-column: 1/2;
@@ -52,4 +53,12 @@ main {
 footer {
     grid-row: 3/4;
     grid-column: 1/2;
+}
+
+/*GRID GALLERY*/
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
 }

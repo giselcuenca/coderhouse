@@ -1,22 +1,22 @@
 /*ABOUT*/
 
 .members {
-    @include flex(column, space-between, center, 1rem,nowrap);
-    background-color: map-get($background-color , lightblack);
-    padding-top: map-get($paddings , xlarge);
-    padding-bottom: map-get($paddings , xxlarge);
+    @include flex(row, space-between, center, 1rem, nowrap);
+    background-color: map-get($background-color, lightblack);
+    padding-top: map-get($paddings, xlarge);
+    padding-bottom: map-get($paddings, xxlarge);
 
     &__tittle {
         font-size: 3em;
         font-family: $font-primary;
         color: blueviolet;
-        padding-bottom: map-get($paddings , xlarge);
+        padding-bottom: map-get($paddings, xlarge);
     }
 
     &__info {
-        @include flex(row, space-between, center,0,wrap);
-        padding-bottom:map-get($paddings , large);
-       
+        @include flex(row, space-between, center, 0, nowrap);
+        padding-bottom: map-get($paddings, large);
+
 
         .members__profile {
             align-items: center;
@@ -25,9 +25,9 @@
 
             .members__img {
                 width: 90%;
-                min-width: 70%;
-                padding: .3rem;
-                background-color: map-get($background-color , lightpink );
+                min-width: 50%;
+                padding: .2rem;
+                background-color: map-get($background-color, lightpink);
                 border-radius: 10rem;
                 transition: .6s ease-in;
 
@@ -37,10 +37,10 @@
             }
 
             .members__name {
-                font-size: 2em;
+                font-size: 2.5em;
                 color: blueviolet;
-                padding-top: map-get($paddings , medium);
-                padding-bottom: map-get($paddings , xsmall);
+                padding-top: map-get($paddings, medium);
+                padding-bottom: map-get($paddings, xsmall);
             }
 
             .members__p {
@@ -50,25 +50,83 @@
     }
 }
 
+.newsletter {
+    @include flex(column, space-around, center, 2rem, nowrap);
+    padding: map-get($paddings, large);
+
+    .form {
+        background-color: map-get($background-color, lightgrey);
+        border-radius: 4rem;
+        padding: map-get($paddings, xlarge);
+        align-items: center;
+
+        &__img {
+            width: 100%;
+            min-width: 360px;
+            flex-basis: 30%;
+        }
+
+        &__p {
+            font-size: 2em;
+            padding: map-get($paddings, xsmall);
+        }
+
+        .contact__form {
+            width: 100%;
+            padding: map-get($paddings, xsmall);
+
+            .contact__sector {
+                padding-bottom: map-get($paddings, medium);
+
+                .contact__input {
+                    font-size: 2em;
+                }
+
+                .contact__inside {
+                    text-align: left;
+                    font-size: 1.8em;
+                    padding: map-get($paddings, xsmall);
+                }
+
+                .contact__checkbox {
+                    font-size: 1.8rem;
+                }
+            }
+
+            .form__button {
+                font-size: 3em;
+
+                .button_letter {
+                    color: $principal;
+                    background-color: map-get($background-color, blueviolet);
+                    padding: 1rem 9rem;
+                    border-radius: 1.2rem;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
 
 
 /*MEDIA QUERY ABOUT*/
 
 @media screen and (max-width:1024px) {
     .members {
-        
-        padding: map-get($paddings , xsmall);
-
-        &__tittle {
-            font-size: 2.5em;
-        }
+        flex-wrap: wrap;
+        padding: map-get($paddings, small);
 
         &__name {
-            font-size: 1.8em;
+            font-size: .5em;
         }
 
         &__p {
             font-size: 1.6em;
         }
+    }
+
+    .form {
+        padding: map-get($paddings, large);
+        padding-bottom: map-get($paddings, large);
     }
 }

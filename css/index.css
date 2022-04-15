@@ -25,6 +25,9 @@
 .padding-xsmall {
   padding: 1rem; }
 
+.padding-tiny {
+  padding: 0.5rem; }
+
 .padding-tiny-special {
   padding: 0.5rem 0; }
 
@@ -43,6 +46,9 @@
 
 .background-color-lightblack {
   background-color: rgba(1, 1, 1, 0.916); }
+
+.background-color-lightgrey {
+  background-color: rgba(255, 255, 240, 0.061); }
 
 /* RESET CSS*/
 *,
@@ -70,6 +76,7 @@ a {
   display: inline-block; }
 
 /*GRID*/
+/*grid general*/
 body {
   display: grid;
   grid-template-columns: 2;
@@ -89,6 +96,12 @@ main {
 footer {
   grid-row: 3/4;
   grid-column: 1/2; }
+
+/*GRID GALLERY*/
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr); }
 
 /*HELPERS*/
 /*Container*/
@@ -226,10 +239,12 @@ header .navbar {
   padding: 4rem; }
   .section__picture {
     flex-basis: 50%;
-    min-width: 360px; }
+    min-width: 360px;
+    border-radius: 1rem; }
     .section__picture .section__img {
       width: 100%;
-      padding: 1rem;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
       background-color: aquamarine; }
   .section__description {
     display: flex;
@@ -260,6 +275,14 @@ header .navbar {
       content: "✨"; }
     .section__description .section__container .section__h2:after {
       content: "✨"; }
+    .section__description .section__container h3 {
+      font-size: 3em;
+      font-weight: lighter;
+      font-style: normal;
+      letter-spacing: 0;
+      text-align: center;
+      color: #ebdfae;
+      padding: 1.5rem; }
     .section__description .section__container p {
       font-size: 1.6em;
       font-weight: lighter;
@@ -268,7 +291,7 @@ header .navbar {
       text-align: justify;
       padding: 1rem; }
     .section__description .button {
-      font-size: 1.3em;
+      font-size: 1.8em;
       font-weight: bold;
       color: #000000;
       text-align: center;
@@ -308,7 +331,7 @@ header .navbar {
 /*ABOUT*/
 .members {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
@@ -327,7 +350,7 @@ header .navbar {
     justify-content: space-between;
     align-items: center;
     gap: 0;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding-bottom: 3rem; }
     .members__info .members__profile {
       align-items: center;
@@ -335,70 +358,114 @@ header .navbar {
       flex-basis: 20%; }
       .members__info .members__profile .members__img {
         width: 90%;
-        min-width: 70%;
-        padding: .3rem;
+        min-width: 50%;
+        padding: .2rem;
         background-color: #f7d4fa;
         border-radius: 10rem;
         transition: .6s ease-in; }
         .members__info .members__profile .members__img:hover {
           transform: rotate(1turn) scale(1.1, 1.1); }
       .members__info .members__profile .members__name {
-        font-size: 2em;
+        font-size: 2.5em;
         color: blueviolet;
         padding-top: 2rem;
         padding-bottom: 1rem; }
       .members__info .members__profile .members__p {
         font-size: 1.5em; }
 
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  padding: 3rem; }
+  .newsletter .form {
+    background-color: rgba(255, 255, 240, 0.061);
+    border-radius: 4rem;
+    padding: 4rem;
+    align-items: center; }
+    .newsletter .form__img {
+      width: 100%;
+      min-width: 360px;
+      flex-basis: 30%; }
+    .newsletter .form__p {
+      font-size: 2em;
+      padding: 1rem; }
+    .newsletter .form .contact__form {
+      width: 100%;
+      padding: 1rem; }
+      .newsletter .form .contact__form .contact__sector {
+        padding-bottom: 2rem; }
+        .newsletter .form .contact__form .contact__sector .contact__input {
+          font-size: 2em; }
+        .newsletter .form .contact__form .contact__sector .contact__inside {
+          text-align: left;
+          font-size: 1.8em;
+          padding: 1rem; }
+        .newsletter .form .contact__form .contact__sector .contact__checkbox {
+          font-size: 1.8rem; }
+      .newsletter .form .contact__form .form__button {
+        font-size: 3em; }
+        .newsletter .form .contact__form .form__button .button_letter {
+          color: #ffffff;
+          background-color: blueviolet;
+          padding: 1rem 9rem;
+          border-radius: 1.2rem;
+          font-size: 2rem; }
+
 /*MEDIA QUERY ABOUT*/
 @media screen and (max-width: 1024px) {
   .members {
-    padding: 1rem; }
-    .members__tittle {
-      font-size: 2.5em; }
+    flex-wrap: wrap;
+    padding: 1.5rem; }
     .members__name {
-      font-size: 1.8em; }
+      font-size: .5em; }
     .members__p {
-      font-size: 1.6em; } }
+      font-size: 1.6em; }
+  .form {
+    padding: 3rem;
+    padding-bottom: 3rem; } }
 
-/*MEDIA*/
+/*ALBUMS*/
 .playlist {
   width: 100%;
   min-width: 360px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  gap: 0;
-  flex-wrap: wrap; }
+  gap: 4rem;
+  flex-wrap: wrap;
+  padding-bottom: 3rem;
+  background-color: rgba(1, 1, 1, 0.916); }
   .playlist__a {
     flex-basis: 100%; }
   .playlist__h2 {
-    font-size: 3em;
+    font-size: 2.4em;
+    align-self: center;
     padding-top: 3rem;
     color: aquamarine; }
   .playlist__p {
-    font-size: 3em;
+    font-size: 2em;
     padding-bottom: 1rem; }
 
 /*MEDIA QUERY MEDIA*/
 @media screen and (max-width: 1024px) {
   .playlist {
+    flex-wrap: wrap;
     padding: 1rem;
-    padding-bottom: 2rem; } }
+    padding-bottom: 2rem; }
+    .playlist__a {
+      flex-basis: 100%; } }
 
 /*TOUR*/
 .table {
   width: 100%;
   min-width: 50%;
-  justify-content: center;
   padding: 3rem;
   background-color: rgba(1, 1, 1, 0.916); }
-  .table__info {
-    font-size: 3em;
-    align-items: center;
-    color: aquamarine;
-    padding-bottom: 4rem; }
   .table__tittle {
     font-size: 3em;
     padding-bottom: 2rem;
@@ -408,31 +475,56 @@ header .navbar {
     font-size: 2em;
     font-weight: lighter;
     padding-bottom: 2rem; }
+  .table__button {
+    font-size: 1em;
+    font-weight: dark;
+    font-style: normal;
+    letter-spacing: 0;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: #000000;
+    text-decoration: none;
+    background-color: aquamarine; }
+  .table__buttonsoldout {
+    font-size: 1em;
+    font-weight: dark;
+    font-style: normal;
+    letter-spacing: 0;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: #000000;
+    text-decoration: line-through;
+    background-color: rgba(255, 255, 240, 0.061); }
 
 /*MEDIA QUERY TOUR*/
 @media screen and (max-width: 1024px) {
   .table {
     padding: 1rem; } }
 
-/*CONTACT*/
-.gallery_tittle {
-  font-size: 5em;
-  font-weight: lighter;
-  font-style: normal;
-  letter-spacing: 1rem;
-  text-align: center;
-  font-family: "Bowlby One SC";
-  color: blueviolet; }
-
-.gallery__imgs {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
-  gap: 0;
-  flex-wrap: wrap;
+/*GALLERY*/
+.gallery {
+  gap: 2rem;
+  padding-top: 4rem;
   padding-bottom: 4rem; }
-  .gallery__imgs .gallery__img {
+  .gallery img {
     width: 100%;
-    min-width: 360px;
-    padding: 3rem; }
+    border-radius: .5rem;
+    padding: 0.2rem;
+    background-color: rgba(255, 255, 240, 0.061); }
+
+/*MEDIA QUERY GALLERY*/
+@media screen and (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem; } }
+
+@media screen and (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem; } }

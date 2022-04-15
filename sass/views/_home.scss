@@ -12,23 +12,25 @@
 }
 
 .section {
-    @include flex(row, space-between, center, 2rem,nowrap);
-    background-color: map-get($background-color , lightblack);
+    @include flex(row, space-between, center, 2rem, nowrap);
+    background-color: map-get($background-color, lightblack);
     padding: map-get($paddings, xlarge);
 
     &__picture {
         flex-basis: 50%;
         min-width: 360px;
+        border-radius: 1rem;
 
         .section__img {
             width: 100%;
-            padding:  map-get($paddings, xsmall);
-            background-color: map-get($background-color, aquamarine );
+            border-radius: 0.5rem;
+            padding: map-get($paddings, tiny);
+            background-color: map-get($background-color, aquamarine);
         }
     }
 
     &__description {
-        @include flex(column, space-between, center, 2rem,wrap);
+        @include flex(column, space-between, center, 2rem, wrap);
         flex-basis: 50%;
         color: $principal;
 
@@ -40,9 +42,9 @@
             }
 
             h2 {
-                @include tittles-texts ($font-style: italic,$font-size:2em, $font-weight: lighter, $letter-spacing: 0, $text-align:center);
+                @include tittles-texts ($font-style: italic, $font-size:2em, $font-weight: lighter, $letter-spacing: 0, $text-align:center);
                 color: rgb(235, 223, 174);
-                padding:  map-get($paddings, small)
+                padding: map-get($paddings, small)
             }
 
             .section__h2:before {
@@ -53,31 +55,37 @@
                 content: "✨";
             }
 
+            h3 {
+                @include tittles-texts ($font-style: italic, $font-size:3em, $font-weight: lighter, $letter-spacing: 0, $text-align:center);
+                color: rgb(235, 223, 174);
+                padding: map-get($paddings, small)
+            }
+
             p {
                 @include tittles-texts ($font-style: normal, $font-size:1.6em, $letter-spacing: 0.1rem, $text-align:justify);
-                padding:  map-get($paddings, xsmall);
+                padding: map-get($paddings, xsmall);
             }
         }
 
         .button {
-            font-size: 1.3em;
+            font-size: 1.8em;
             font-weight: bold;
             color: $secondary;
             text-align: center;
-            background-color: map-get($background-color , aquamarine );
+            background-color: map-get($background-color, aquamarine);
             width: 25rem;
-            padding:  map-get($paddings, tiny-special);
+            padding: map-get($paddings, tiny-special);
             border-radius: 3rem;
 
             &:hover {
-                background-color: map-get($background-color , lightblue );
+                background-color: map-get($background-color, lightblue);
             }
 
             &:active {
-                background-color: map-get($background-color , lightblue );
+                background-color: map-get($background-color, lightblue);
                 transform: translateY(3px);
             }
-            
+
         }
 
 
@@ -87,9 +95,9 @@
 /*MEDIA QUERY INDEX*/
 
 @media screen and (max-width:1024px) {
-    
+
     .section {
-    
+
         flex-wrap: wrap;
         align-items: center;
 

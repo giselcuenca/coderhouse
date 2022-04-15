@@ -1,17 +1,32 @@
-/*CONTACT*/
-.gallery_tittle {
-    @include tittles-texts ($font-style: normal, $font-size:5em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
-    font-family: $font-secondary;
-    color: blueviolet;
-}
-.gallery__imgs {
-    background-color: black;
-        @include flex(column, space-around,flex-start, 0, wrap);
-        padding-bottom: map-get($paddings, xlarge);
+/*GALLERY*/
+.gallery {
+    gap: 2rem;
+    padding-top: map-get($paddings, xlarge);
+    padding-bottom: map-get($paddings, xlarge);
 
-        .gallery__img {
-            width: 100%;
-            min-width: 360px;
-            padding: map-get($paddings, large);
-        }
+    img {
+        width: 100%;
+        border-radius: .5rem;
+        padding: 0.2rem;
+        background-color: map-get($background-color, lightgrey);
     }
+}
+
+/*MEDIA QUERY GALLERY*/
+@media screen and (max-width:1024px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        padding-left: map-get($paddings, small);
+        padding-right: map-get($paddings, small);
+    }
+}
+
+@media screen and (max-width:480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        padding-left: map-get($paddings, small);
+        padding-right: map-get($paddings, small);
+    }
+}

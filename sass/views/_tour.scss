@@ -1,19 +1,11 @@
  /*TOUR*/
- 
+
  .table {
-    
+
      width: 100%;
      min-width: 50%;
-     justify-content: center;
      padding: map-get($paddings, large);
-     background-color: map-get($background-color , lightblack);
-
-     &__info {
-         font-size: 3em;
-         align-items: center;
-         color: aquamarine;
-         padding-bottom: map-get($paddings, xlarge)
-     }
+     background-color: map-get($background-color, lightblack);
 
      &__tittle {
          font-size: 3em;
@@ -28,6 +20,23 @@
          padding-bottom: map-get($paddings, medium);
      }
 
+     &__button {
+         @include tittles-texts ($font-style: normal, $font-size:1em, $font-weight: dark, $letter-spacing: 0, $text-align:center);
+         padding: map-get($paddings, xsmall);
+         border-radius: 1rem;
+         color: $secondary;
+         text-decoration: none;
+         background-color: map-get($background-color, aquamarine);
+     }
+
+     &__buttonsoldout {
+         @include tittles-texts ($font-style: normal, $font-size:1em, $font-weight: dark, $letter-spacing: 0, $text-align:center);
+         padding: map-get($paddings, xsmall);
+         border-radius: 1rem;
+         color: $secondary;
+         text-decoration: line-through;
+         background-color: map-get($background-color, lightgrey);
+     }
  }
 
  /*MEDIA QUERY TOUR*/

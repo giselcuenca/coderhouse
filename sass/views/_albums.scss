@@ -1,0 +1,41 @@
+/*ALBUMS*/
+
+.playlist {
+    width: 100%;
+    min-width: 360px;
+    @include flex(row, space-around, center, 4rem, wrap);
+    padding-bottom: map-get($paddings, large);
+    background-color: map-get($background-color, lightblack);
+
+    &__a {
+        flex-basis: 100%;
+    }
+
+    &__h2 {
+        font-size: 2.4em;
+        align-self: center;
+        padding-top: map-get($paddings, large);
+        color: aquamarine;
+    }
+
+    &__p {
+        font-size: 2em;
+        padding-bottom: map-get($paddings, xsmall);
+    }
+}
+
+/*MEDIA QUERY MEDIA*/
+
+@media screen and (max-width:1024px) {
+
+    .playlist {
+        flex-wrap: wrap;
+        padding: map-get($paddings, xsmall);
+        padding-bottom: map-get($paddings, medium);
+
+        &__a {
+            flex-basis: 100%;
+        }
+    }
+
+}

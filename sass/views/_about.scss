@@ -1,35 +1,89 @@
 /*ABOUT*/
 
-.members {
-    @include flex(row, space-between, center, 1rem, nowrap);
-    background-color: map-get($background-color, lightblack);
-    padding-top: map-get($paddings, xlarge);
-    padding-bottom: map-get($paddings, xxlarge);
+/*Coldplay information*/
 
-    &__tittle {
-        font-size: 3em;
-        font-family: $font-primary;
-        color: blueviolet;
-        padding-bottom: map-get($paddings, xlarge);
+.band {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    background-color: map-get($background-color, lightblack);
+
+    &__information {
+        margin: 2rem;
+
+        h1 {
+            @include tittles-texts ($font-style: normal, $font-size:5em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
+            font-family: $font-secondary;
+            color: blueviolet;
+            margin: 2rem;
+        }
+
+        .band__p {
+            @include tittles-texts ($font-style: normal, $font-size:2.2em, $letter-spacing: 0.1rem, $text-align:center);
+            color: rgb(223, 193, 223);
+            padding-top: map-get($paddings, large);
+            padding-bottom: map-get($paddings, large);
+            padding-left: map-get($paddings, xxxlarge);
+            padding-right: map-get($paddings, xxxlarge);
+        }
+
+        p {
+            @include tittles-texts ($font-style: normal, $font-size:1.8em, $letter-spacing: 0.1rem, $text-align:justify);
+            padding-left: map-get($paddings, xxxlarge);
+            padding-right: map-get($paddings, xxxlarge);
+            padding-bottom: map-get($paddings, small);
+        }
+
+        h3 {
+            @include tittles-texts ($font-style:normal, $font-size:3em, $letter-spacing: 0.3rem, $text-align:center);
+            color: rgb(223, 193, 223);
+            font-weight: bolder;
+            padding-bottom: map-get($paddings, xxlarge);
+        }
     }
 
-    &__info {
-        @include flex(row, space-between, center, 0, nowrap);
+    &__img {
+        width: 100%;
+        min-width: 360px;
+        padding-left: 8rem;
+        padding-right: 8rem;
+        padding-top: map-get($paddings, large);
         padding-bottom: map-get($paddings, large);
+    }
+}
 
+/*Members presentation*/
 
-        .members__profile {
-            align-items: center;
-            text-align: center;
-            flex-basis: 20%;
+.members {
+    padding-top: map-get($paddings, large);
+    padding-bottom: map-get($paddings, xlarge);
+
+    &__tittle {
+        @include tittles-texts ($font-style: normal, $font-size:3em, $font-weight:bold, $letter-spacing: 0.5rem, $text-align:justify);
+        color: white;
+        padding: map-get($paddings, xlarge);
+        justify-content: center;
+        text-align: center;
+    }
+
+    &__presentation {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: (3, 1fr);
+        justify-content: center;
+        gap: 10rem;
+        padding: map-get($paddings, xxxlarge);
+        background-color: rgba(27, 27, 88, 0.902);
+        border-radius: 2rem;
+
+        .members__information {
+            @include flex(column, space-between, center, 3rem, wrap);
 
             .members__img {
-                width: 90%;
-                min-width: 50%;
-                padding: .2rem;
-                background-color: map-get($background-color, lightpink);
-                border-radius: 10rem;
-                transition: .6s ease-in;
+                width: 80%;
+                min-width: 360px;
+                padding: map-get($paddings, large);
+                transition: .6s ease-in-out;
 
                 &:hover {
                     transform: rotate(1turn) scale(1.1, 1.1);
@@ -37,14 +91,13 @@
             }
 
             .members__name {
-                font-size: 2.5em;
-                color: blueviolet;
-                padding-top: map-get($paddings, medium);
-                padding-bottom: map-get($paddings, xsmall);
+                @include tittles-texts ($font-style: normal, $font-size:3em, $font-weight:bold, $letter-spacing: 0.2rem, $text-align:justify);
+                color: white;
             }
 
-            .members__p {
-                font-size: 1.5em;
+            .members__description {
+                @include tittles-texts ($font-style: normal, $font-size:1.6em, $letter-spacing: 0.1rem, $text-align:justify);
+                padding: map-get($paddings, xsmall);
             }
         }
     }
@@ -56,7 +109,7 @@
 
     .form {
         background-color: map-get($background-color, lightgrey);
-        border-radius: 4rem;
+        border-radius: 3rem;
         padding: map-get($paddings, xlarge);
         align-items: center;
 
@@ -67,7 +120,7 @@
         }
 
         &__p {
-            font-size: 2em;
+            font-size: 1.8em;
             padding: map-get($paddings, xsmall);
         }
 
@@ -79,7 +132,7 @@
                 padding-bottom: map-get($paddings, medium);
 
                 .contact__input {
-                    font-size: 2em;
+                    font-size: 1.8em;
                 }
 
                 .contact__inside {
@@ -94,14 +147,13 @@
             }
 
             .form__button {
-                font-size: 3em;
 
                 .button_letter {
                     color: $principal;
                     background-color: map-get($background-color, blueviolet);
                     padding: 1rem 9rem;
                     border-radius: 1.2rem;
-                    font-size: 2rem;
+                    font-size: 1.8rem;
                 }
             }
         }
@@ -111,22 +163,73 @@
 
 /*MEDIA QUERY ABOUT*/
 
-@media screen and (max-width:1024px) {
-    .members {
-        flex-wrap: wrap;
-        padding: map-get($paddings, small);
+@media screen and (max-width:720px) {
 
-        &__name {
-            font-size: .5em;
+    /*Media query for band information*/
+
+    .band {
+        &__information {
+            h1 {
+                @include tittles-texts ($font-size:4em, $letter-spacing: 1rem, $text-align:center);
+            }
+
+            .band__p {
+                @include tittles-texts ($font-size:2em, $letter-spacing: 0.1rem, $text-align:center);
+                padding-top: map-get($paddings, large);
+                padding-bottom: map-get($paddings, large);
+                padding-left: map-get($paddings, large);
+                padding-right: map-get($paddings, large);
+            }
+
+            p {
+                @include tittles-texts ($font-size:1.6em, $letter-spacing: 0.1rem, $text-align:justify);
+                padding-left: map-get($paddings, large);
+                padding-right: map-get($paddings, large);
+                padding-bottom: map-get($paddings, small);
+            }
+
+            h3 {
+                padding-bottom: map-get($paddings, large);
+            }
         }
 
-        &__p {
-            font-size: 1.6em;
+        &__img {
+            padding-left: map-get($paddings, xlarge);
+            padding-right: map-get($paddings, xlarge);
+            padding-top: map-get($paddings, medium);
+            padding-bottom: map-get($paddings, medium);
         }
     }
 
-    .form {
-        padding: map-get($paddings, large);
-        padding-bottom: map-get($paddings, large);
+    /*Media query for members presentation*/
+
+    .members {
+
+
+        &__presentation {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            justify-content: center;
+            gap: 2rem;
+            padding: map-get($paddings, medium);
+
+            .members__information {
+
+                .members__description {
+                    font-size: 1.6em;
+                    padding: map-get($paddings, large);
+                }
+            }
+        }
+    }
+
+    /*Media query for newsletter*/
+
+    .newsletter {
+        .form {
+            padding: map-get($paddings, large);
+            padding-bottom: map-get($paddings, large);
+        }
     }
 }

@@ -97,7 +97,6 @@
 @media screen and (max-width:1024px) {
 
     .section {
-
         flex-wrap: wrap;
         align-items: center;
 
@@ -125,7 +124,23 @@
                 }
 
                 p {
-                    font-size: 2em;
+                    font-size: 1.4em;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:360px) {
+    .section {
+        &__description {
+            .section__container {
+                h2 {
+                    font-size: 1.8em;
+                }
+                
+                p {
+                    font-size: 1.6em;
                 }
             }
         }

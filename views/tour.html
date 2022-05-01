@@ -12,18 +12,25 @@
     <link rel="shortcut icon" href="../assets/image/favicon.gif" type="image/x-icon">
     <link rel="stylesheet" href="../css/index.css">
 
-    <title>Tour | Coldplay - Tour dates</title>
+    <title>Tour | Coldplay's tour dates</title>
 </head>
 
 <body>
-    <!--Inicio de header-->
+    <!--Header start-->
+
     <header>
         <nav class="navbar container">
-            <picture class="logo">
-                <a href="../index.html"><img src="../assets/image/coldplay-logo-.png" alt="Coldplay"
-                        class="logo__img"></a>
+            <picture class="navbar__logo">
+                <a href="../index.html"><img src="../assets/image/coldplay-logo-.png" alt="Coldplay" class="logo__img"></a>
             </picture>
-            <ul class="menu">
+
+            <label for="hambur" class="navbar__label">
+                <img src="../assets/image/hambur-png.png" alt="hambur" height="80px" class="hambur__img">
+            </label>
+
+            <input type="checkbox" id="hambur" class="navbar__input">
+
+            <ul class="navbar__menu">
                 <li class="menu__item">
                     <a href="../index.html" class="menu__link">Home</a>
                 </li>
@@ -42,20 +49,29 @@
             </ul>
         </nav>
     </header>
-    <!--Fin del header-->
-    <!--Inicio de main-->
+
+    <!--Header end-->
+
+    <!--Main start-->
+
     <main>
         <section>
             <picture class="banner">
-                <img src="../assets/image/tour.png" class="banner__img" alt="foto de banda">
+                <img src="../assets/image/tour.png" class="banner__img" alt="tour band">
             </picture>
         </section>
-        <article class="section__description container">
-            <div class="section__container">
-                <h1>TOUR DATES 2022</h1>
-                <h2>Go get your tickets now!</h2>
-            </div>
+
+        <!--In order to avoid the creation of a similar class for the title and the text, i recalled classes from the page name "about"-->
+        
+        <article class="band container">
+            <div class="band__information">
+                <h1>World Tour</h1>
+                <p class="band__p">Get your tickets now!</p>
+                </div>
         </article>
+
+        <!--Tour information-->
+        
         <section>
             <div class="table container">
                 <table class="table" cellpadding="10px" cellspacing="5px">
@@ -68,81 +84,83 @@
                         <th class="table__dates">21th Sep</th>
                         <th class="table__dates">Nacional Stadium - Chile</th>
                         <th class="table__dates">
-                            <a href="#" class="table__buttonsoldout">Sold out</a>
+                            <a href="#" class="table__buttonsoldout">Tickets</a>
                         </th>
                     </tr>
                     <tr class="table__date">
                         <th class="table__dates">23th Sep</th>
                         <th class="table__dates">Nacional Stadium - Chile</th>
                         <th class="table__dates">
-                            <a href="https://www.puntoticket.com/coldplay" class="table__button">Get tickets</a>
+                            <a href="https://www.puntoticket.com/coldplay" class="table__button">Tickets</a>
                         </th>
                     </tr>
                     <tr class="table__date">
                         <th class="table__dates">24th Sep</th>
                         <th class="table__dates">Nacional Stadium - Chile</th>
                         <th class="table__dates">
-                            <a href="#" class="table__buttonsoldout">Sold out</a>
+                            <a href="#" class="table__buttonsoldout">Tickets</a>
                         </th>
                     </tr>
                     <tr class="table__date">
                         <th class="table__dates">11th Oct</th>
                         <th class="table__dates">Nilton stadium - Brazil</th>
                         <th class="table__dates">
-                            <a href="https://www.eventim.com.br/artist/coldplay/" class="table__button">Get tickets</a>
+                            <a href="https://www.eventim.com.br/artist/coldplay/" class="table__button">Tickets</a>
                         </th>
                     </tr>
                     <tr class="table__date">
                         <th class="table__dates">15th Oct</th>
                         <th class="table__dates">Allianz Parque - Brazil</th>
                         <th class="table__dates">
-                            <a href="#" class="table__buttonsoldout">Sold out</a>
+                            <a href="#" class="table__buttonsoldout">Tickets</a>
                         </th>
                     </tr>
                     <tr class="table__date">
                         <th class="table__dates">16th Oct</th>
                         <th class="table__dates">Allianz Parque - Brazil</th>
                         <th class="table__dates">
-                            <a href="#" class="table__button">Get tickets</a>
+                            <a href="#" class="table__button">Tickets</a>
                         </th>
                     </tr>
                     <tr class="table__date">
                         <th class="table__dates">25th Oct</th>
-                        <th class="table__dates">River Plate stadium - Argentina</th>
+                        <th class="table__dates">River Plate stadium - ARG</th>
                         <th class="table__dates">
-                            <a href="#" class="table__button">Get tickets</a>
+                            <a href="#" class="table__button">Tickets</a>
                         </th>
                     </tr>
                     <tr class="table__date">
                         <th class="table__dates">26th Oct</th>
-                        <th class="table__dates">River Plate stadium - Argentina</th>
+                        <th class="table__dates">River Plate stadium - ARG</th>
                         <th class="table__dates">
-                            <a href="#" class="table__buttonsoldout">Sold out</a>
+                            <a href="#" class="table__buttonsoldout">Tickets</a>
                         </th>
                     </tr>
                     <tr class="table__date">
                         <th class="table__dates">28th Oct</th>
-                        <th class="table__dates">River Plate stadium - Argentina</th>
+                        <th class="table__dates">River Plate stadium - ARG</th>
                         <th class="table__dates">
-                            <a href="#" class="table__buttonsoldout">Sold out</a>
+                            <a href="#" class="table__buttonsoldout">Tickets</a>
                         </th>
                     </tr>
                     <tr class="table__date">
                         <th class="table__dates">29th Oct</th>
-                        <th class="table__dates">River Plate stadium - Argentina</th>
+                        <th class="table__dates">River Plate stadium - ARG</th>
                         <th class="table__dates">
-                            <a href="#" class="table__buttonsoldout">Sold out</a>
+                            <a href="#" class="table__buttonsoldout">Tickets</a>
                         </th>
                     </tr>
                 </table>
             </div>
         </section>
     </main>
-    <!--Fin de main-->
-    <!--Inicio de footer-->
+
+    <!--Main end-->
+
+    <!--Footer start-->
+
     <footer class="footer">
-        <div class="footer__socialmedia container">
-            <h3 class="footer__tittle">Follow Coldplay</h3>
+        <div class="footer__socialmedia container">            
             <a href="https://open.spotify.com/artist/4gzpq5DPGxSnKTe4SA8HAU" target="_blank" class="footer_icon"> <img
                     src="../assets/image/s.png" alt="Spotify"></a>
             <a href="https://www.deezer.com/mx/artist/892" target="_blank" class="footer_icon"> <img
@@ -155,10 +173,10 @@
                 <img src="../assets/image/t.png" alt="Twitter"></a>
         </div>
         <div class="copyright container">
-            <p class="copyright__text">Copyright © Coldplay 2022. </p>
+            <p class="copyright__text">Copyright © Gisel Cuenca 2022 </p>
         </div>
     </footer>
-    <!-- Fin de footer-->
+    <!-- Footer end-->
 </body>
 
 </html>

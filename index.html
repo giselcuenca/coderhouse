@@ -16,13 +16,17 @@
 </head>
 
 <body>
-    <!--Inicio de header-->
+    <!--Header start-->
     <header>
         <nav class="navbar container">
-            <picture class="logo">
-                <a href="index.html"><img src="./assets/image/coldplay-logo-.png" alt="Coldplay" class="logo__img"></a>
+            <picture class="navbar__logo">
+                <a href="index.html"><img src="assets/image/coldplay-logo-.png" alt="Coldplay" class="logo__img"></a>
             </picture>
-            <ul class="menu">
+            <label for="hambur" class="navbar__label">
+                <img src="assets/image/hambur-png.png" alt="hambur" height="80px" class="hambur__img">
+            </label>
+            <input type="checkbox" id="hambur" class="navbar__input">
+            <ul class="navbar__menu">
                 <li class="menu__item--active">
                     <a href="index.html" class="menu__link">Home</a>
                 </li>
@@ -42,8 +46,9 @@
         </nav>
     </header>
 
-    <!--Fin del header-->
-    <!--Inicio de main-->
+    <!--Header end-->
+
+    <!--Main start-->
 
     <main>
         <section>
@@ -51,6 +56,9 @@
                 <img src="assets/image/banner coldplay.png" class="banner__img" alt="foto de banda">
             </picture>
         </section>
+
+        <!--Welcome and introduction to the site-->
+
         <section class="section container">
             <article class="section__description">
                 <div class="section__container">
@@ -70,18 +78,21 @@
                 <img class="section__img" src="assets/image/coldplay.jpeg" alt="foto">
             </picture>
         </section>
+
+        <!--New album promotion-->
+
         <section class="section container">
             <picture class="section__picture">
                 <img class="section__img" src="assets/image/musicofthespherescoldplay.jpg" alt="fotocd">
             </picture>
             <article class="section__description">
                 <div class="section__container">
-                    <h1>Music of the Spheres</h1>
+                    <h3>Music of the Spheres</h3>
                     <p>Music of the Spheres is the ninth studio album by Coldplay. Released on 15 October
                         2021 by Parlophone in the United Kingdom and Atlantic Records in the United States. The album
                         was
                         produced by
-                        Max Martin, who is a new producer to the band's discography. It features guest appearances from
+                        Max Martin and it features guest appearances from
                         Selena Gomez, We Are King, Jacob Collier and BTS, as well as returning contributions from
                         electronic
                         producer Jon Hopkins</p>
@@ -93,12 +104,12 @@
         </section>
     </main>
 
-    <!--Fin de main-->
-    <!--Inicio de footer-->
+    <!--Main end->
 
-    <footer class="footer flex-row">
-        <div class="footer__socialmedia flex-row container">
-            <h3 class="footer__tittle">Follow Coldplay</h3>
+    <!--Footer start-->
+
+    <footer class="footer">
+        <div class="footer__socialmedia container">
             <a href="https://open.spotify.com/artist/4gzpq5DPGxSnKTe4SA8HAU" target="_blank" class="footer_icon"> <img
                     src="assets/image/s.png" alt="Spotify"></a>
             <a href="https://www.deezer.com/mx/artist/892" target="_blank" class="footer_icon"> <img
@@ -111,11 +122,11 @@
                 <img src="assets/image/t.png" alt="Twitter"></a>
         </div>
         <div class="copyright container">
-            <p class="copyright__text">Copyright © Coldplay 2022</p>
+            <p class="copyright__text">Copyright © Gisel Cuenca 2022</p>
         </div>
     </footer>
 
-    <!--Fin de footer-->
+    <!--Footer end-->
 
 </body>
 

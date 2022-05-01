@@ -1,49 +1,46 @@
 /*FOOTER*/
 
 .footer {
-    @include flex(row, space-between, center, 2rem,wrap);
+    @include flex(column, space-between, center, 0, wrap);
     min-height: 20vh;
     padding: map-get($paddings, xsmall);
     background-image: linear-gradient(to bottom, blueviolet, rgb(68, 0, 255));
 
     &__socialmedia {
-        @include flex(row, space-between, center,wrap);
+        @include flex(row, space-between, center, wrap);
         flex-basis: 40%;
 
-        .footer__tittle {
-            font-size: 2em;
-            font-weight: lighter;
+        img {
+            padding: 2rem;
+        }
 
-            .footer__icon {
-                padding: map-get($paddings, medium);
-                min-width: 20%;
-            }
+        .footer__icon {
+            padding: map-get($paddings, medium);
+            min-width: 20%;
         }
     }
+}
 
-    .copyright__text {
-        font-size: 2em;
-        font-weight: lighter;
-    }
+.copyright__text {
+    font-size: 2em;
+    font-weight: lighter;
 }
 
 /*MEDIA QUERY FOOTER*/
 
 @media screen and (max-width:1024px) {
 
-    .footer__socialmedia {
-        padding: 1rem;
+    .footer .footer__socialmedia {
         justify-content: space-around;
         flex-basis: 30%;
 
-        &__tittle {
-            font-size: 1.8em;
-            padding-bottom: 2rem;
+        img {
+            padding: .8rem;
         }
-    }
 
-    .copyright__text {
-        font-size: 1.8em;
-        padding: 1rem;
+        .copyright__text {
+            font-size: 1.8em;
+            padding: 1rem;
+        }
     }
 }

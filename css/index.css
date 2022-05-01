@@ -7,6 +7,9 @@
 /*FONTS AND SIZES*/
 /*MAPS*/
 /*Paddings for content*/
+.padding-xxxlarge {
+  padding: 10rem; }
+
 .padding-xxlarge {
   padding: 6rem; }
 
@@ -141,48 +144,72 @@ header .navbar {
   gap: 0;
   flex-wrap: wrap;
   padding: 2rem; }
-  header .navbar .logo {
+  header .navbar .navbar__logo {
     flex-basis: 30%; }
-    header .navbar .logo__img {
+    header .navbar .navbar__logo .logo__img {
       width: 100%;
       min-width: 200px; }
-  header .navbar .menu {
+  header .navbar .navbar__label {
+    display: none; }
+  header .navbar .navbar__input {
+    display: none; }
+  header .navbar .navbar__input:checked + .navbar__menu {
+    background-color: none; }
+  header .navbar .navbar__menu {
     flex-basis: 50%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    gap: 0.5rem;
     flex-wrap: nowrap;
-    font-size: 1.3em; }
-    header .navbar .menu .menu__item, header .navbar .menu .menu__item--active {
+    font-size: 1.3em;
+    text-align: center;
+    transition: all .5s; }
+    header .navbar .navbar__menu .menu__item, header .navbar .navbar__menu .menu__item--active {
       border: none; }
-      header .navbar .menu .menu__item--active {
+      header .navbar .navbar__menu .menu__item--active {
         color: blueviolet;
         border-bottom: .2rem solid blueviolet; }
-      header .navbar .menu .menu__item .menu__link, header .navbar .menu .menu__item--active .menu__link {
+      header .navbar .navbar__menu .menu__item .menu__link, header .navbar .navbar__menu .menu__item--active .menu__link {
         font-size: 1.8em;
         padding: 1rem; }
 
 /*MEDIA QUERY HEADER*/
-@media screen and (max-width: 1024px) {
-  body {
-    padding: 0; }
-  header {
-    padding: 2em; }
-    header .navbar {
-      justify-content: center;
-      flex-direction: column; }
-    header .menu {
-      font-size: 1em; } }
+@media screen and (max-width: 770px) {
+  header .navbar .navbar__logo {
+    flex-basis: 50%; }
+    header .navbar .navbar__logo .logo__img {
+      width: 100%;
+      min-width: 200px; }
+  header .navbar .navbar__label {
+    display: block;
+    cursor: pointer; }
+  header .navbar .navbar__menu {
+    position: fixed;
+    top: 100px;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0;
+    flex-wrap: nowrap;
+    clip-path: circle(0 at center);
+    transition: clip-path 3s easy-in-out; }
+  header .navbar .navbar__input:checked + .navbar__menu {
+    background-color: #19062b;
+    clip-path: circle(100% at center); } }
 
 /*FOOTER*/
 .footer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  gap: 0;
   flex-wrap: wrap;
   min-height: 20vh;
   padding: 1rem;
@@ -195,28 +222,26 @@ header .navbar {
     gap: wrap;
     flex-wrap: wrap;
     flex-basis: 40%; }
-    .footer__socialmedia .footer__tittle {
-      font-size: 2em;
-      font-weight: lighter; }
-      .footer__socialmedia .footer__tittle .footer__icon {
-        padding: 2rem;
-        min-width: 20%; }
-  .footer .copyright__text {
-    font-size: 2em;
-    font-weight: lighter; }
+    .footer__socialmedia img {
+      padding: 2rem; }
+    .footer__socialmedia .footer__icon {
+      padding: 2rem;
+      min-width: 20%; }
+
+.copyright__text {
+  font-size: 2em;
+  font-weight: lighter; }
 
 /*MEDIA QUERY FOOTER*/
 @media screen and (max-width: 1024px) {
-  .footer__socialmedia {
-    padding: 1rem;
+  .footer .footer__socialmedia {
     justify-content: space-around;
     flex-basis: 30%; }
-    .footer__socialmedia__tittle {
+    .footer .footer__socialmedia img {
+      padding: .8rem; }
+    .footer .footer__socialmedia .copyright__text {
       font-size: 1.8em;
-      padding-bottom: 2rem; }
-  .copyright__text {
-    font-size: 1.8em;
-    padding: 1rem; } }
+      padding: 1rem; } }
 
 /*views*/
 /*INDEX*/
@@ -326,52 +351,120 @@ header .navbar {
       .section__description .section__container h2 {
         font-size: 2.2em; }
       .section__description .section__container p {
-        font-size: 2em; } }
+        font-size: 1.4em; } }
+
+@media screen and (max-width: 360px) {
+  .section__description .section__container h2 {
+    font-size: 1.8em; }
+  .section__description .section__container p {
+    font-size: 1.6em; } }
 
 /*ABOUT*/
-.members {
+/*Coldplay information*/
+.band {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: nowrap;
-  background-color: rgba(1, 1, 1, 0.916);
-  padding-top: 4rem;
-  padding-bottom: 6rem; }
+  flex-direction: column;
+  margin-top: 3rem;
+  background-color: rgba(1, 1, 1, 0.916); }
+  .band__information {
+    margin: 2rem; }
+    .band__information h1 {
+      font-size: 5em;
+      font-weight: lighter;
+      font-style: normal;
+      letter-spacing: 1rem;
+      text-align: center;
+      font-family: "Bowlby One SC";
+      color: blueviolet;
+      margin: 2rem; }
+    .band__information .band__p {
+      font-size: 2.2em;
+      font-weight: lighter;
+      font-style: normal;
+      letter-spacing: 0.1rem;
+      text-align: center;
+      color: #dfc1df;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      padding-left: 10rem;
+      padding-right: 10rem; }
+    .band__information p {
+      font-size: 1.8em;
+      font-weight: lighter;
+      font-style: normal;
+      letter-spacing: 0.1rem;
+      text-align: justify;
+      padding-left: 10rem;
+      padding-right: 10rem;
+      padding-bottom: 1.5rem; }
+    .band__information h3 {
+      font-size: 3em;
+      font-weight: lighter;
+      font-style: normal;
+      letter-spacing: 0.3rem;
+      text-align: center;
+      color: #dfc1df;
+      font-weight: bolder;
+      padding-bottom: 6rem; }
+  .band__img {
+    width: 100%;
+    min-width: 360px;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem; }
+
+/*Members presentation*/
+.members {
+  padding-top: 3rem;
+  padding-bottom: 4rem; }
   .members__tittle {
     font-size: 3em;
-    font-family: "Roboto";
-    color: blueviolet;
-    padding-bottom: 4rem; }
-  .members__info {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0;
-    flex-wrap: nowrap;
-    padding-bottom: 3rem; }
-    .members__info .members__profile {
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: 0.5rem;
+    text-align: justify;
+    color: white;
+    padding: 4rem;
+    justify-content: center;
+    text-align: center; }
+  .members__presentation {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 3, 1fr;
+    justify-content: center;
+    gap: 10rem;
+    padding: 10rem;
+    background-color: rgba(27, 27, 88, 0.902);
+    border-radius: 2rem; }
+    .members__presentation .members__information {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      text-align: center;
-      flex-basis: 20%; }
-      .members__info .members__profile .members__img {
-        width: 90%;
-        min-width: 50%;
-        padding: .2rem;
-        background-color: #f7d4fa;
-        border-radius: 10rem;
-        transition: .6s ease-in; }
-        .members__info .members__profile .members__img:hover {
+      gap: 3rem;
+      flex-wrap: wrap; }
+      .members__presentation .members__information .members__img {
+        width: 80%;
+        min-width: 360px;
+        padding: 3rem;
+        transition: .6s ease-in-out; }
+        .members__presentation .members__information .members__img:hover {
           transform: rotate(1turn) scale(1.1, 1.1); }
-      .members__info .members__profile .members__name {
-        font-size: 2.5em;
-        color: blueviolet;
-        padding-top: 2rem;
-        padding-bottom: 1rem; }
-      .members__info .members__profile .members__p {
-        font-size: 1.5em; }
+      .members__presentation .members__information .members__name {
+        font-size: 3em;
+        font-weight: bold;
+        font-style: normal;
+        letter-spacing: 0.2rem;
+        text-align: justify;
+        color: white; }
+      .members__presentation .members__information .members__description {
+        font-size: 1.6em;
+        font-weight: lighter;
+        font-style: normal;
+        letter-spacing: 0.1rem;
+        text-align: justify;
+        padding: 1rem; }
 
 .newsletter {
   display: flex;
@@ -383,7 +476,7 @@ header .navbar {
   padding: 3rem; }
   .newsletter .form {
     background-color: rgba(255, 255, 240, 0.061);
-    border-radius: 4rem;
+    border-radius: 3rem;
     padding: 4rem;
     align-items: center; }
     .newsletter .form__img {
@@ -391,7 +484,7 @@ header .navbar {
       min-width: 360px;
       flex-basis: 30%; }
     .newsletter .form__p {
-      font-size: 2em;
+      font-size: 1.8em;
       padding: 1rem; }
     .newsletter .form .contact__form {
       width: 100%;
@@ -399,66 +492,121 @@ header .navbar {
       .newsletter .form .contact__form .contact__sector {
         padding-bottom: 2rem; }
         .newsletter .form .contact__form .contact__sector .contact__input {
-          font-size: 2em; }
+          font-size: 1.8em; }
         .newsletter .form .contact__form .contact__sector .contact__inside {
           text-align: left;
           font-size: 1.8em;
           padding: 1rem; }
         .newsletter .form .contact__form .contact__sector .contact__checkbox {
           font-size: 1.8rem; }
-      .newsletter .form .contact__form .form__button {
-        font-size: 3em; }
-        .newsletter .form .contact__form .form__button .button_letter {
-          color: #ffffff;
-          background-color: blueviolet;
-          padding: 1rem 9rem;
-          border-radius: 1.2rem;
-          font-size: 2rem; }
+      .newsletter .form .contact__form .form__button .button_letter {
+        color: #ffffff;
+        background-color: blueviolet;
+        padding: 1rem 9rem;
+        border-radius: 1.2rem;
+        font-size: 1.8rem; }
 
 /*MEDIA QUERY ABOUT*/
-@media screen and (max-width: 1024px) {
-  .members {
-    flex-wrap: wrap;
-    padding: 1.5rem; }
-    .members__name {
-      font-size: .5em; }
-    .members__p {
-      font-size: 1.6em; }
-  .form {
+@media screen and (max-width: 720px) {
+  /*Media query for band information*/
+  .band__information h1 {
+    font-size: 4em;
+    font-weight: lighter;
+    font-style: normal;
+    letter-spacing: 1rem;
+    text-align: center; }
+  .band__information .band__p {
+    font-size: 2em;
+    font-weight: lighter;
+    font-style: normal;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem; }
+  .band__information p {
+    font-size: 1.6em;
+    font-weight: lighter;
+    font-style: normal;
+    letter-spacing: 0.1rem;
+    text-align: justify;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 1.5rem; }
+  .band__information h3 {
+    padding-bottom: 3rem; }
+  .band__img {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem; }
+  /*Media query for members presentation*/
+  .members__presentation {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem; }
+    .members__presentation .members__information .members__description {
+      font-size: 1.6em;
+      padding: 3rem; }
+  /*Media query for newsletter*/
+  .newsletter .form {
     padding: 3rem;
     padding-bottom: 3rem; } }
 
 /*ALBUMS*/
 .playlist {
-  width: 100%;
-  min-width: 360px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  justify-content: center;
   gap: 4rem;
-  flex-wrap: wrap;
-  padding-bottom: 3rem;
-  background-color: rgba(1, 1, 1, 0.916); }
-  .playlist__a {
-    flex-basis: 100%; }
+  padding: 1.5rem;
+  padding-bottom: 10rem;
+  background-color: rgba(1, 1, 1, 0.916);
+  border-radius: 2rem; }
   .playlist__h2 {
-    font-size: 2.4em;
-    align-self: center;
+    font-size: 2.2em;
     padding-top: 3rem;
-    color: aquamarine; }
+    padding-bottom: 1.5rem;
+    color: white; }
   .playlist__p {
     font-size: 2em;
-    padding-bottom: 1rem; }
+    padding-bottom: 1.5rem; }
 
 /*MEDIA QUERY MEDIA*/
 @media screen and (max-width: 1024px) {
   .playlist {
-    flex-wrap: wrap;
-    padding: 1rem;
-    padding-bottom: 2rem; }
-    .playlist__a {
-      flex-basis: 100%; } }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    justify-content: center; } }
+
+@media screen and (max-width: 720px) {
+  .band__information h1 {
+    font-size: 4em;
+    font-weight: lighter;
+    font-style: normal;
+    letter-spacing: 1rem;
+    text-align: center; }
+  .band__information .band__p {
+    font-size: 2em;
+    font-weight: lighter;
+    font-style: normal;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem; }
+  .playlist {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    justify-content: center; } }
 
 /*TOUR*/
 .table {
@@ -477,7 +625,7 @@ header .navbar {
     padding-bottom: 2rem; }
   .table__button {
     font-size: 1em;
-    font-weight: dark;
+    font-weight: lighter;
     font-style: normal;
     letter-spacing: 0;
     text-align: center;
@@ -488,7 +636,7 @@ header .navbar {
     background-color: aquamarine; }
   .table__buttonsoldout {
     font-size: 1em;
-    font-weight: dark;
+    font-weight: lighter;
     font-style: normal;
     letter-spacing: 0;
     text-align: center;
@@ -499,9 +647,27 @@ header .navbar {
     background-color: rgba(255, 255, 240, 0.061); }
 
 /*MEDIA QUERY TOUR*/
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 720px) {
+  .table__tittle {
+    font-size: 2em;
+    padding-bottom: 2rem; }
+  .table__dates {
+    font-size: 1.8em;
+    padding: 0.5rem; } }
+
+@media screen and (max-width: 480px) {
   .table {
-    padding: 1rem; } }
+    padding: 1rem; }
+    .table__tittle {
+      font-size: 2em;
+      padding-bottom: 2rem; }
+    .table__dates {
+      font-size: 1.3em;
+      padding: 0.5rem; }
+    .table__button {
+      padding: 0.5rem; }
+    .table__buttonsoldout {
+      padding: 0.5rem; } }
 
 /*GALLERY*/
 .gallery {

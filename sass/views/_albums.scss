@@ -1,26 +1,28 @@
 /*ALBUMS*/
 
 .playlist {
-    width: 100%;
-    min-width: 360px;
-    @include flex(row, space-around, center, 4rem, wrap);
-    padding-bottom: map-get($paddings, large);
-    background-color: map-get($background-color, lightblack);
 
-    &__a {
-        flex-basis: 100%;
-    }
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    justify-content: center;
+    gap: 4rem;
+    padding: map-get($paddings, small);
+    padding-bottom: map-get($paddings, xxxlarge);
+    background-color: map-get($background-color, lightblack);
+    border-radius: 2rem;
+
 
     &__h2 {
-        font-size: 2.4em;
-        align-self: center;
+        font-size: 2.2em;
         padding-top: map-get($paddings, large);
-        color: aquamarine;
+        padding-bottom: map-get($paddings, small);
+        color: white;
     }
 
     &__p {
         font-size: 2em;
-        padding-bottom: map-get($paddings, xsmall);
+        padding-bottom: map-get($paddings, small);
     }
 }
 
@@ -29,13 +31,37 @@
 @media screen and (max-width:1024px) {
 
     .playlist {
-        flex-wrap: wrap;
-        padding: map-get($paddings, xsmall);
-        padding-bottom: map-get($paddings, medium);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        justify-content: center;
 
-        &__a {
-            flex-basis: 100%;
-        }
     }
+}
 
+@media screen and (max-width:720px) {
+    .band {
+        &__information {
+            h1 {
+                @include tittles-texts ($font-size:4em, $letter-spacing: 1rem, $text-align:center);
+            }
+
+            .band__p {
+                @include tittles-texts ($font-size:2em, $letter-spacing: 0.1rem, $text-align:center);
+                padding-top: map-get($paddings, small);
+                padding-bottom: map-get($paddings, small);
+                padding-left: map-get($paddings, small);
+                padding-right: map-get($paddings, small);
+            }
+        }
+
+        
+    }
+    .playlist {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 1fr);
+            justify-content: center;
+
+        }
 }

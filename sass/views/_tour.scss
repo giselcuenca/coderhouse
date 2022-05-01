@@ -21,7 +21,7 @@
      }
 
      &__button {
-         @include tittles-texts ($font-style: normal, $font-size:1em, $font-weight: dark, $letter-spacing: 0, $text-align:center);
+         @include tittles-texts ($font-style: normal, $font-size:1em, $letter-spacing: 0, $text-align:center);
          padding: map-get($paddings, xsmall);
          border-radius: 1rem;
          color: $secondary;
@@ -30,7 +30,7 @@
      }
 
      &__buttonsoldout {
-         @include tittles-texts ($font-style: normal, $font-size:1em, $font-weight: dark, $letter-spacing: 0, $text-align:center);
+         @include tittles-texts ($font-style: normal, $font-size:1em, $letter-spacing: 0, $text-align:center);
          padding: map-get($paddings, xsmall);
          border-radius: 1rem;
          color: $secondary;
@@ -40,9 +40,44 @@
  }
 
  /*MEDIA QUERY TOUR*/
+ @media screen and (max-width:720px) {
+     .table {
 
- @media screen and (max-width:1024px) {
+         &__tittle {
+             font-size: 2em;
+             padding-bottom: map-get($paddings, medium);
+
+         }
+
+         &__dates {
+             font-size: 1.8em;
+             padding: map-get($paddings, tiny);
+         }
+     }
+ }
+
+
+ @media screen and (max-width:480px) {
      .table {
          padding: map-get($paddings, xsmall);
+
+         &__tittle {
+             font-size: 2em;
+             padding-bottom: map-get($paddings, medium);
+
+         }
+
+         &__dates {
+             font-size: 1.3em;
+             padding: map-get($paddings, tiny);
+         }
+
+         &__button {
+             padding: map-get($paddings, tiny);
+         }
+
+         &__buttonsoldout {
+             padding: map-get($paddings, tiny);
+         }
      }
  }

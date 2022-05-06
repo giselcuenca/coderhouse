@@ -1,11 +1,12 @@
 /*GALLERY*/
 
+/*Tittle*/
+
 .gallerytittle {
 
     &__h1 {
         @include tittles-texts ($font-style: normal, $font-size:5em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
         font-family: $font-secondary;
-
     }
 
     &__p {
@@ -13,6 +14,8 @@
         color: rgb(217, 125, 217);
     }
 }
+
+/*Gallery with photos*/
 
 .gallery {
 
@@ -36,6 +39,7 @@
 /*DESKTOP*/
 
 @media screen and (max-width:1024px) {
+
     .gallerytittle {
 
         &__h1 {
@@ -48,6 +52,8 @@
         }
     }
 }
+
+/*TABLE*/
 
 @media screen and (max-width:720px) {
 
@@ -75,8 +81,6 @@
 
 /*MOBILE*/
 
-/*grid gallery*/
-
 @media screen and (max-width:480px) {
 
     .gallerytittle {
@@ -100,6 +104,8 @@
     }
 }
 
+/*SMALL MOBILE*/
+
 @media screen and (max-width:360px) {
 
     .gallerytittle {
@@ -110,3 +116,5 @@
         }
     }
 }
+
+/*It's also adaptable to a smaller mobile media query such as Samsung Fold.- 280px*/

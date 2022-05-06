@@ -1,5 +1,7 @@
 /*ALBUMS*/
 
+/*Tittle*/
+
 .albumstittle {
 
     &__h1 {
@@ -12,6 +14,8 @@
         color: rgb(217, 125, 217);
     }
 }
+
+/*Playlist*/
 
 .playlist {
     display: grid;
@@ -110,12 +114,13 @@
 @media screen and (max-width:360px) {
 
     .albumstittle {
-        
+
         &__p {
             @include tittles-texts ($font-style: normal, $font-size:1.8em, $letter-spacing: 0.1rem, $text-align:center);
             color: rgb(217, 125, 217);
         }
     }
+
     .playlist {
 
         &__h2 {
@@ -125,8 +130,4 @@
     }
 }
 
-/*SMALL PHONE - SAMSUNG FOLD*/
-
-@media screen and (max-width:280px){
-    
-}
+/*It's also adaptable to a smaller mobile media query such as Samsung Fold.- 280px*/

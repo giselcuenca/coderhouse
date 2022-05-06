@@ -59,6 +59,8 @@ header {
 
 /*MEDIA QUERY HEADER*/
 
+/*TABLE*/
+
 @media screen and (max-width: 720px) {
 
     header .navbar {
@@ -95,7 +97,10 @@ header {
     }
 }
 
+/*MOBILE ADAPTATION*/
+
 @media screen and (max-width: 580px) {
+
     header .navbar {
 
         .navbar__menu {
@@ -111,7 +116,10 @@ header {
     }
 }
 
+/*MOBILE*/
+
 @media screen and (max-width: 480px) {
+
     header .navbar {
 
         .navbar__menu {
@@ -131,7 +139,5 @@ header {
                 }
             }
         }
-
-
     }
 }

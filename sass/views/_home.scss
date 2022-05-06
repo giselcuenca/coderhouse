@@ -1,4 +1,6 @@
-/*INDEX*/
+/*INDEX HOME*/
+
+/*Banner*/
 
 .banner {
     align-items: center;
@@ -9,6 +11,8 @@
         width: 100%;
     }
 }
+
+/*Welcome and introduction*/
 
 .section {
     @include flex(row, space-between, center, 2rem, nowrap);
@@ -37,7 +41,6 @@
                 @include tittles-texts ($font-style: normal, $font-size:5em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
                 font-family: $font-secondary;
                 color: blueviolet;
-
             }
 
             h2 {
@@ -67,7 +70,6 @@
 
             p {
                 @include tittles-texts ($font-style: normal, $font-size:2em, $letter-spacing: 0.1rem, $text-align:justify);
-
             }
         }
 
@@ -94,6 +96,8 @@
 }
 
 /*MEDIA QUERY INDEX*/
+
+/*DESKTOP*/
 
 @media screen and (max-width:1024px) {
 
@@ -198,6 +202,8 @@
         }
     }
 }
+
+/*SMALL MOBILE - SAMSUNG FOLD*/
 
 @media screen and (max-width:280px) {
 

@@ -166,8 +166,6 @@
 
 @media screen and (max-width:1024px) {
 
-    /*Media query for band information*/
-
     .band {
 
         &__information {
@@ -289,14 +287,11 @@
                 .members__description {
                     margin: 0 4rem;
                     padding-bottom: map-get($paddings, small);
-
                 }
             }
         }
     }
 }
-
-/*Media query for newsletter*/
 
 .newsletter {
 
@@ -370,8 +365,6 @@
             }
         }
     }
-
-    /*Media query for newsletter*/
 
     .newsletter {
 

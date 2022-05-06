@@ -1,5 +1,6 @@
  /*TOUR*/
 
+/*Tittle*/
 
  .tourtittle {
 
@@ -7,7 +8,6 @@
          @include tittles-texts ($font-style: normal, $font-size:5em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
          font-family: $font-secondary;
          padding-top: 2rem;
-
      }
 
      &__p {
@@ -16,6 +16,8 @@
          padding-top: 1rem;
      }
  }
+
+ /*Table with tour information*/
 
  .table {
 
@@ -61,6 +63,7 @@
  /*DESKTOP*/
 
  @media screen and (max-width:1024px) {
+
      .tourtittle {
 
          &__h1 {
@@ -69,7 +72,6 @@
 
          &__p {
              @include tittles-texts ($font-style: normal, $font-size:2em, $letter-spacing: 0.1rem, $text-align:center);
-
          }
      }
  }
@@ -94,7 +96,6 @@
          &__tittle {
              font-size: 2em;
              padding-bottom: map-get($paddings, medium);
-
          }
 
          &__dates {
@@ -115,6 +116,7 @@
  /*MOBILE*/
 
  @media screen and (max-width:480px) {
+
      .tourtittle {
 
          &__h1 {
@@ -128,6 +130,7 @@
      }
 
      .table {
+         
          padding: map-get($paddings, xsmall);
 
          &__tittle {

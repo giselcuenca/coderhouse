@@ -3,7 +3,7 @@
 /*miscelaneous*/
 @import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Dancing+Script&family=Roboto:wght@400;500&display=swap");
 /*VARIABLES*/
-/*COLOR PRINCIPALES*/
+/*PRINCIPAL COLORS*/
 /*FONTS AND SIZES*/
 /*MAPS*/
 /*Paddings for content*/
@@ -100,8 +100,8 @@ header {
 
 /*Mixin flex*/
 /*Mixin for tittles and texts*/
-/*ANIMACIONES*/
-/*ANIMACION EN H1*/
+/*ANIMATIONS*/
+/*ANIMATION FOR TITTLES - H1*/
 h1 {
   animation-name: h1;
   animation-timing-function: ease-in;
@@ -164,6 +164,7 @@ header .navbar {
         padding: 1rem; }
 
 /*MEDIA QUERY HEADER*/
+/*TABLE*/
 @media screen and (max-width: 720px) {
   header .navbar .navbar__logo {
     flex-basis: 50%; }
@@ -191,6 +192,7 @@ header .navbar {
     background-color: #19062b;
     clip-path: circle(100% at center); } }
 
+/*MOBILE ADAPTATION*/
 @media screen and (max-width: 580px) {
   header .navbar .navbar__menu {
     position: fixed;
@@ -207,6 +209,7 @@ header .navbar {
     clip-path: circle(0 at center);
     transition: clip-path 3s easy-in-out; } }
 
+/*MOBILE*/
 @media screen and (max-width: 480px) {
   header .navbar .navbar__menu {
     position: fixed;
@@ -267,7 +270,8 @@ header .navbar {
     padding: 1rem; } }
 
 /*views*/
-/*INDEX*/
+/*INDEX HOME*/
+/*Banner*/
 .banner {
   align-items: center;
   justify-content: center;
@@ -275,6 +279,7 @@ header .navbar {
   .banner__img {
     width: 100%; }
 
+/*Welcome and introduction*/
 .section {
   display: flex;
   flex-direction: row;
@@ -353,6 +358,7 @@ header .navbar {
         transform: translateY(3px); }
 
 /*MEDIA QUERY INDEX*/
+/*DESKTOP*/
 @media screen and (max-width: 1024px) {
   .section {
     padding: 1.5rem; }
@@ -431,6 +437,7 @@ header .navbar {
   .section__description .section__container .button {
     font-size: 1.6em; } }
 
+/*SMALL MOBILE - SAMSUNG FOLD*/
 @media screen and (max-width: 280px) {
   .section__description .section__container h2 {
     font-size: 1.5em;
@@ -598,7 +605,6 @@ header .navbar {
 /*MEDIA QUERY ABOUT*/
 /*DESKTOP*/
 @media screen and (max-width: 1024px) {
-  /*Media query for band information*/
   .band__information h1 {
     font-size: 4em;
     font-weight: lighter;
@@ -686,7 +692,6 @@ header .navbar {
     margin: 0 4rem;
     padding-bottom: 1.5rem; } }
 
-/*Media query for newsletter*/
 .newsletter .form {
   padding: 1.5rem;
   padding-bottom: 3rem; }
@@ -737,7 +742,6 @@ header .navbar {
       font-size: 1.6em;
       margin: 0 1.9rem;
       padding-bottom: 1.5rem; }
-  /*Media query for newsletter*/
   .newsletter .form {
     padding: 1.5rem;
     padding-bottom: 3rem; }
@@ -793,6 +797,7 @@ header .navbar {
           font-size: 1.7em; } }
 
 /*ALBUMS*/
+/*Tittle*/
 .albumstittle__h1 {
   font-size: 5em;
   font-weight: lighter;
@@ -809,6 +814,7 @@ header .navbar {
   text-align: center;
   color: #d97dd9; }
 
+/*Playlist*/
 .playlist {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -898,8 +904,9 @@ header .navbar {
     font-size: 1.9em;
     padding-top: 1.9rem; } }
 
-/*SMALL PHONE - SAMSUNG FOLD*/
+/*It's also adaptable to a smaller mobile media query such as Samsung Fold.- 280px*/
 /*TOUR*/
+/*Tittle*/
 .tourtittle__h1 {
   font-size: 5em;
   font-weight: lighter;
@@ -918,6 +925,7 @@ header .navbar {
   color: #d97dd9;
   padding-top: 1rem; }
 
+/*Table with tour information*/
 .table {
   width: 100%;
   min-width: 50%;
@@ -1053,6 +1061,7 @@ header .navbar {
       font-size: 1.7em; } }
 
 /*GALLERY*/
+/*Tittle*/
 .gallerytittle__h1 {
   font-size: 5em;
   font-weight: lighter;
@@ -1069,6 +1078,7 @@ header .navbar {
   text-align: center;
   color: #d97dd9; }
 
+/*Gallery with photos*/
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1099,6 +1109,7 @@ header .navbar {
     text-align: center;
     color: #d97dd9; } }
 
+/*TABLE*/
 @media screen and (max-width: 720px) {
   .gallerytittle__h1 {
     font-size: 3em;
@@ -1121,7 +1132,6 @@ header .navbar {
     padding-right: 1.5rem; } }
 
 /*MOBILE*/
-/*grid gallery*/
 @media screen and (max-width: 480px) {
   .gallerytittle__h1 {
     font-size: 2.5em;
@@ -1143,6 +1153,7 @@ header .navbar {
     padding-left: 1.5rem;
     padding-right: 1.5rem; } }
 
+/*SMALL MOBILE*/
 @media screen and (max-width: 360px) {
   .gallerytittle__p {
     font-size: 1.5em;
@@ -1151,3 +1162,5 @@ header .navbar {
     letter-spacing: 0.1rem;
     text-align: center;
     color: #d97dd9; } }
+
+/*It's also adaptable to a smaller mobile media query such as Samsung Fold.- 280px*/

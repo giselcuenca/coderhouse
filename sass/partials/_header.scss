@@ -1,50 +1,57 @@
 /*HEADER*/
 
-header .navbar {
-    min-height: 10vh;
-    @include flex(row, space-between, center, 0, wrap);
-    padding: map-get($paddings, medium);
+header {
 
-    .navbar__logo {
-        flex-basis: 30%;
+    .navbar {
+        min-height: 10vh;
+        @include flex(row, space-between, center, 0, wrap);
+        padding: map-get($paddings, medium);
 
-        .logo__img {
-            width: 100%;
-            min-width: 200px;
-        }
-    }
+        .navbar__logo {
+            flex-basis: 30%;
 
-    .navbar__label {
-        display: none;
-    }
-
-    .navbar__input {
-        display: none;
-    }
-
-    .navbar__input:checked+.navbar__menu {
-        background-color: none;
-    }
-
-    .navbar__menu {
-        flex-basis: 50%;
-        @include flex(row, space-between, center, .5rem, nowrap);
-        font-size: 1.3em;
-        text-align: center;
-        transition: all .5s;
-
-        .menu__item {
-            border: none;
-
-            &--active {
-                @extend .menu__item;
-                color: blueviolet;
-                border-bottom: .2rem solid blueviolet;
+            .logo__img {
+                width: 100%;
             }
+        }
 
-            .menu__link {
-                font-size: $text-md;
-                padding: map-get($paddings, xsmall);
+        .navbar__label {
+            display: none;
+
+            .hambur__img {
+                height: 35px;
+                width: 100%;
+            }
+        }
+
+        .navbar__input {
+            display: none;
+        }
+
+        .navbar__input:checked+.navbar__menu {
+            background-color: none;
+        }
+
+        .navbar__menu {
+            flex-basis: 50%;
+            @include flex(row, space-between, center, .5rem, nowrap);
+            font-size: 1.3em;
+            text-align: center;
+            transition: all .5s;
+
+            .menu__item {
+                border: none;
+
+                &--active {
+                    @extend .menu__item;
+                    color: blueviolet;
+                    border-bottom: .2rem solid blueviolet;
+                }
+
+                .menu__link {
+                    font-size: $text-md;
+                    padding: map-get($paddings, xsmall);
+                }
             }
         }
     }
@@ -52,17 +59,18 @@ header .navbar {
 
 /*MEDIA QUERY HEADER*/
 
-@media screen and (max-width: 770px) {
-    
-    header .navbar {
-         .navbar__logo {
-        flex-basis: 50%;
+@media screen and (max-width: 720px) {
 
-        .logo__img {
-            width: 100%;
-            min-width: 200px;
+    header .navbar {
+        .navbar__logo {
+            flex-basis: 50%;
+
+            .logo__img {
+                width: 100%;
+                min-width: 150px;
+            }
         }
-    }
+
         .navbar__label {
             display: block;
             cursor: pointer;
@@ -70,7 +78,7 @@ header .navbar {
 
         .navbar__menu {
             position: fixed;
-            top: 100px;
+            top: 120px;
             bottom: 0;
             width: 100%;
             left: 0;
@@ -83,6 +91,47 @@ header .navbar {
             background-color: rgb(25, 6, 43);
             clip-path: circle(100% at center);
         }
+
+    }
+}
+
+@media screen and (max-width: 580px) {
+    header .navbar {
+
+        .navbar__menu {
+            position: fixed;
+            top: 105px;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+            @include flex(column, space-evenly, center, 0, nowrap);
+            clip-path: circle(0 at center);
+            transition: clip-path 3s easy-in-out;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header .navbar {
+
+        .navbar__menu {
+            position: fixed;
+            top: 80px;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+            @include flex(column, space-evenly, center, 0, nowrap);
+            clip-path: circle(0 at center);
+            transition: clip-path 3s easy-in-out;
+
+            .menu__item {
+
+                .menu__link {
+                    font-size: 1.6em;
+                }
+            }
+        }
+
 
     }
 }

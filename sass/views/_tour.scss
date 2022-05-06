@@ -1,5 +1,22 @@
  /*TOUR*/
 
+
+ .tourtittle {
+
+     &__h1 {
+         @include tittles-texts ($font-style: normal, $font-size:5em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
+         font-family: $font-secondary;
+         padding-top: 2rem;
+
+     }
+
+     &__p {
+         @include tittles-texts ($font-style: normal, $font-size:2.2em, $letter-spacing: 0.1rem, $text-align:center);
+         color: rgb(217, 125, 217);
+         padding-top: 1rem;
+     }
+ }
+
  .table {
 
      width: 100%;
@@ -22,7 +39,7 @@
 
      &__button {
          @include tittles-texts ($font-style: normal, $font-size:1em, $letter-spacing: 0, $text-align:center);
-         padding: map-get($paddings, xsmall);
+         padding: map-get($paddings, small);
          border-radius: 1rem;
          color: $secondary;
          text-decoration: none;
@@ -31,7 +48,7 @@
 
      &__buttonsoldout {
          @include tittles-texts ($font-style: normal, $font-size:1em, $letter-spacing: 0, $text-align:center);
-         padding: map-get($paddings, xsmall);
+         padding: map-get($paddings, small);
          border-radius: 1rem;
          color: $secondary;
          text-decoration: line-through;
@@ -40,7 +57,38 @@
  }
 
  /*MEDIA QUERY TOUR*/
+
+ /*DESKTOP*/
+
+ @media screen and (max-width:1024px) {
+     .tourtittle {
+
+         &__h1 {
+             @include tittles-texts ($font-style: normal, $font-size:4em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
+         }
+
+         &__p {
+             @include tittles-texts ($font-style: normal, $font-size:2em, $letter-spacing: 0.1rem, $text-align:center);
+
+         }
+     }
+ }
+
+ /*TABLET*/
+
  @media screen and (max-width:720px) {
+
+     .tourtittle {
+
+         &__h1 {
+             @include tittles-texts ($font-style: normal, $font-size:3em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
+         }
+
+         &__p {
+             @include tittles-texts ($font-style: normal, $font-size:1.9em, $letter-spacing: 0.1rem, $text-align:center);
+         }
+     }
+
      .table {
 
          &__tittle {
@@ -51,25 +99,45 @@
 
          &__dates {
              font-size: 1.8em;
-             padding: map-get($paddings, tiny);
+             padding: map-get($paddings, small);
+         }
+
+         &__button {
+             padding: map-get($paddings, xsmall);
+         }
+
+         &__buttonsoldout {
+             padding: map-get($paddings, xsmall);
          }
      }
  }
 
+ /*MOBILE*/
 
  @media screen and (max-width:480px) {
+     .tourtittle {
+
+         &__h1 {
+             @include tittles-texts ($font-style: normal, $font-size:2.5em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
+         }
+
+         &__p {
+             @include tittles-texts ($font-style: normal, $font-size:1.8em, $letter-spacing: 0.1rem, $text-align:center);
+             margin: 1rem;
+         }
+     }
+
      .table {
          padding: map-get($paddings, xsmall);
 
          &__tittle {
              font-size: 2em;
              padding-bottom: map-get($paddings, medium);
-
          }
 
          &__dates {
-             font-size: 1.3em;
-             padding: map-get($paddings, tiny);
+             font-size: 1.8em;
+             padding: map-get($paddings, xsmall);
          }
 
          &__button {
@@ -78,6 +146,51 @@
 
          &__buttonsoldout {
              padding: map-get($paddings, tiny);
+         }
+     }
+ }
+
+ /*SMALL MOBILE*/
+
+ @media screen and (max-width:360px) {
+
+     .tourtittle {
+
+         &__p {
+             @include tittles-texts ($font-style: normal, $font-size:1.5em, $letter-spacing: 0.1rem, $text-align:center);
+         }
+     }
+
+     .table {
+         padding: map-get($paddings, xsmall);
+
+         &__tittle {
+             font-size: 1.9em;
+         }
+
+         &__dates {
+             font-size: 1.5em;
+         }
+     }
+ }
+
+ /*SMALL PHONE - SAMSUNG FOLD*/
+
+ @media screen and (max-width:280px) {
+
+     .tourtittle {
+
+         &__h1 {
+             @include tittles-texts ($font-style: normal, $font-size:2em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
+         }
+     }
+
+     .table {
+         
+         padding: map-get($paddings, tiny);
+
+         &__tittle {
+             font-size: 1.7em;
          }
      }
  }

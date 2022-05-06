@@ -1,5 +1,24 @@
 /*GALLERY*/
+
+.gallerytittle {
+
+    &__h1 {
+        @include tittles-texts ($font-style: normal, $font-size:5em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
+        font-family: $font-secondary;
+
+    }
+
+    &__p {
+        @include tittles-texts ($font-style: normal, $font-size:2.2em, $letter-spacing: 0.1rem, $text-align:center);
+        color: rgb(217, 125, 217);
+    }
+}
+
 .gallery {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     gap: 2rem;
     padding-top: map-get($paddings, xlarge);
     padding-bottom: map-get($paddings, xlarge);
@@ -13,7 +32,39 @@
 }
 
 /*MEDIA QUERY GALLERY*/
+
+/*DESKTOP*/
+
 @media screen and (max-width:1024px) {
+    .gallerytittle {
+
+        &__h1 {
+            @include tittles-texts ($font-style: normal, $font-size:4em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
+        }
+
+        &__p {
+            @include tittles-texts ($font-style: normal, $font-size:2em, $letter-spacing: 0.1rem, $text-align:center);
+            color: rgb(217, 125, 217);
+        }
+    }
+}
+
+@media screen and (max-width:720px) {
+
+    .gallerytittle {
+
+        &__h1 {
+            @include tittles-texts ($font-style: normal, $font-size:3em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
+        }
+
+        &__p {
+            @include tittles-texts ($font-style: normal, $font-size:1.9em, $letter-spacing: 0.1rem, $text-align:center);
+            color: rgb(217, 125, 217);
+        }
+    }
+
+    /*grid gallery*/
+
     .gallery {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 1fr;
@@ -22,11 +73,40 @@
     }
 }
 
+/*MOBILE*/
+
+/*grid gallery*/
+
 @media screen and (max-width:480px) {
+
+    .gallerytittle {
+
+        &__h1 {
+            @include tittles-texts ($font-style: normal, $font-size:2.5em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
+        }
+
+        &__p {
+            @include tittles-texts ($font-style: normal, $font-size:1.8em, $letter-spacing: 0.1rem, $text-align:center);
+            color: rgb(217, 125, 217);
+            margin: 2rem;
+        }
+    }
+
     .gallery {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
         padding-left: map-get($paddings, small);
         padding-right: map-get($paddings, small);
+    }
+}
+
+@media screen and (max-width:360px) {
+
+    .gallerytittle {
+
+        &__p {
+            @include tittles-texts ($font-style: normal, $font-size:1.5em, $letter-spacing: 0.1rem, $text-align:center);
+            color: rgb(217, 125, 217);
+        }
     }
 }

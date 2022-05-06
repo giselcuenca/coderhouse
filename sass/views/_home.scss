@@ -7,18 +7,16 @@
 
     &__img {
         width: 100%;
-        min-width: 360px;
     }
 }
 
 .section {
     @include flex(row, space-between, center, 2rem, nowrap);
     background-color: map-get($background-color, lightblack);
-    padding: map-get($paddings, xlarge);
+    padding: map-get($paddings, large);
 
     &__picture {
         flex-basis: 50%;
-        min-width: 360px;
         border-radius: 1rem;
 
         .section__img {
@@ -39,12 +37,13 @@
                 @include tittles-texts ($font-style: normal, $font-size:5em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
                 font-family: $font-secondary;
                 color: blueviolet;
+
             }
 
             h2 {
-                @include tittles-texts ($font-style: italic, $font-size:2em, $font-weight: lighter, $letter-spacing: 0, $text-align:center);
+                @include tittles-texts ($font-style: italic, $font-size:2em, $font-weight: lighter, $letter-spacing: 0, $text-align:justify);
                 color: rgb(235, 223, 174);
-                padding: map-get($paddings, small)
+                padding-bottom: map-get($paddings, small);
             }
 
             .section__h2:before {
@@ -58,22 +57,27 @@
             h3 {
                 @include tittles-texts ($font-style: italic, $font-size:3em, $font-weight: lighter, $letter-spacing: 0, $text-align:center);
                 color: rgb(235, 223, 174);
-                padding: map-get($paddings, small)
+                padding: map-get($paddings, large)
+            }
+
+
+            .section__h3:after {
+                content: "🪐";
             }
 
             p {
-                @include tittles-texts ($font-style: normal, $font-size:1.6em, $letter-spacing: 0.1rem, $text-align:justify);
-                padding: map-get($paddings, xsmall);
+                @include tittles-texts ($font-style: normal, $font-size:2em, $letter-spacing: 0.1rem, $text-align:justify);
+
             }
         }
 
         .button {
-            font-size: 1.8em;
+            font-size: 2em;
             font-weight: bold;
             color: $secondary;
             text-align: center;
             background-color: map-get($background-color, aquamarine);
-            width: 25rem;
+            width: 15rem;
             padding: map-get($paddings, tiny-special);
             border-radius: 3rem;
 
@@ -85,16 +89,30 @@
                 background-color: map-get($background-color, lightblue);
                 transform: translateY(3px);
             }
-
         }
-
-
     }
 }
 
 /*MEDIA QUERY INDEX*/
 
 @media screen and (max-width:1024px) {
+
+    .section {
+        padding: map-get($paddings, small);
+
+        &__description {
+            .section__container {
+                h1 {
+                    font-size: 4em;
+                }
+            }
+        }
+    }
+}
+
+/*TABLET*/
+
+@media screen and (max-width:720px) {
 
     .section {
         flex-wrap: wrap;
@@ -113,33 +131,92 @@
 
             .section__container {
                 h1 {
-                    font-size: 3em;
-                    padding-bottom: 2rem;
-                    font-weight: lighter;
-                    letter-spacing: .5rem;
+                    @include tittles-texts ($font-size:3em, $font-weight: lighter, $letter-spacing: .5rem, $text-align:center);
+                    padding-bottom: 1.8rem;
                 }
 
                 h2 {
-                    font-size: 2.2em;
+                    @include tittles-texts ($font-size:1.9em, $font-weight: lighter, $letter-spacing: 0, $text-align:justify);
                 }
 
                 p {
-                    font-size: 1.4em;
+                    font-size: 1.8em;
                 }
             }
         }
     }
 }
 
+/*MOBILE*/
+
+@media screen and (max-width:480px) {
+    .section {
+        &__description {
+            .section__container {
+                h1 {
+                    @include tittles-texts ($font-size:2.7em, $font-weight: lighter, $letter-spacing: .5rem, $text-align:center);
+                    padding-bottom: 1.8rem;
+                }
+
+                h3 {
+                    @include tittles-texts ($font-size:2.6em, $font-weight: lighter, $letter-spacing: 0, $text-align:center);
+                    padding: map-get($paddings, small);
+                }
+            }
+
+            .button {
+                font-size: 1.6em;
+            }
+        }
+    }
+}
+
+/*SMALL MOBILE*/
+
 @media screen and (max-width:360px) {
+
     .section {
         &__description {
             .section__container {
                 h2 {
-                    font-size: 1.8em;
+                    @include tittles-texts ($font-size:1.6em, $font-weight: lighter, $letter-spacing: 0, $text-align:justify);
                 }
-                
+
+                h3 {
+                    @include tittles-texts ($font-size:2em, $font-weight: lighter, $letter-spacing: 0, $text-align:center);
+                    padding: map-get($paddings, tiny);
+                }
+
                 p {
+                    @include tittles-texts ($font-style: normal, $font-size:1.6em, $letter-spacing: -0.01rem, $text-align:justify);
+                }
+
+                .button {
+                    font-size: 1.6em;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:280px) {
+
+    .section {
+        &__description {
+            .section__container {
+                h2 {
+                    @include tittles-texts ($font-size:1.5em, $font-weight: lighter, $letter-spacing: -0.01, $text-align:justify);
+                }
+
+                h3 {
+                    @include tittles-texts ($font-size:1.9em, $font-weight: lighter, $letter-spacing: 0, $text-align:center);
+                }
+
+                p {
+                    @include tittles-texts ($font-style: normal, $font-size:1.5em, $letter-spacing:0, $text-align:justify);
+                }
+
+                .button {
                     font-size: 1.6em;
                 }
             }

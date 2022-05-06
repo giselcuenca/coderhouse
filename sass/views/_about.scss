@@ -5,7 +5,7 @@
 .band {
     display: flex;
     flex-direction: column;
-    margin-top: 3rem;
+    margin-top: 2rem;
     background-color: map-get($background-color, lightblack);
 
     &__information {
@@ -20,18 +20,15 @@
 
         .band__p {
             @include tittles-texts ($font-style: normal, $font-size:2.2em, $letter-spacing: 0.1rem, $text-align:center);
-            color: rgb(223, 193, 223);
-            padding-top: map-get($paddings, large);
+            color: rgb(234, 191, 234);
+            margin: 0 6rem;
             padding-bottom: map-get($paddings, large);
-            padding-left: map-get($paddings, xxxlarge);
-            padding-right: map-get($paddings, xxxlarge);
         }
 
         p {
-            @include tittles-texts ($font-style: normal, $font-size:1.8em, $letter-spacing: 0.1rem, $text-align:justify);
-            padding-left: map-get($paddings, xxxlarge);
-            padding-right: map-get($paddings, xxxlarge);
-            padding-bottom: map-get($paddings, small);
+            @include tittles-texts ($font-style: normal, $font-size:2em, $letter-spacing: 0.1rem, $text-align:justify);
+            margin: 0 6rem;
+            padding-bottom: map-get($paddings, large);
         }
 
         h3 {
@@ -44,10 +41,8 @@
 
     &__img {
         width: 100%;
-        min-width: 360px;
-        padding-left: 8rem;
-        padding-right: 8rem;
-        padding-top: map-get($paddings, large);
+        padding-left: map-get($paddings, xxlarge);
+        padding-right: map-get($paddings, xxlarge);
         padding-bottom: map-get($paddings, large);
     }
 }
@@ -59,6 +54,7 @@
     padding-bottom: map-get($paddings, xlarge);
 
     &__tittle {
+
         @include tittles-texts ($font-style: normal, $font-size:3em, $font-weight:bold, $letter-spacing: 0.5rem, $text-align:justify);
         color: white;
         padding: map-get($paddings, xlarge);
@@ -77,12 +73,12 @@
         border-radius: 2rem;
 
         .members__information {
+
             @include flex(column, space-between, center, 3rem, wrap);
 
             .members__img {
                 width: 80%;
-                min-width: 360px;
-                padding: map-get($paddings, large);
+                padding: map-get($paddings, tiny);
                 transition: .6s ease-in-out;
 
                 &:hover {
@@ -91,19 +87,22 @@
             }
 
             .members__name {
-                @include tittles-texts ($font-style: normal, $font-size:3em, $font-weight:bold, $letter-spacing: 0.2rem, $text-align:justify);
-                color: white;
+                @include tittles-texts ($font-style: normal, $font-size:2.2em, $font-weight:bold, $letter-spacing: 0.1rem, $text-align:justify);
+                color: $principal;
+                text-shadow: 1px 1px 2px #000000;
             }
 
             .members__description {
-                @include tittles-texts ($font-style: normal, $font-size:1.6em, $letter-spacing: 0.1rem, $text-align:justify);
-                padding: map-get($paddings, xsmall);
+                @include tittles-texts ($font-style: normal, $font-size:1.8em, $letter-spacing: 0, $text-align:justify);
             }
         }
     }
 }
 
+/*Newsletter*/
+
 .newsletter {
+
     @include flex(column, space-around, center, 2rem, nowrap);
     padding: map-get($paddings, large);
 
@@ -115,12 +114,11 @@
 
         &__img {
             width: 100%;
-            min-width: 360px;
             flex-basis: 30%;
         }
 
         &__p {
-            font-size: 1.8em;
+            font-size: 2em;
             padding: map-get($paddings, xsmall);
         }
 
@@ -132,7 +130,7 @@
                 padding-bottom: map-get($paddings, medium);
 
                 .contact__input {
-                    font-size: 1.8em;
+                    font-size: 2em;
                 }
 
                 .contact__inside {
@@ -142,7 +140,7 @@
                 }
 
                 .contact__checkbox {
-                    font-size: 1.8rem;
+                    font-size: 1.6rem;
                 }
             }
 
@@ -153,7 +151,8 @@
                     background-color: map-get($background-color, blueviolet);
                     padding: 1rem 9rem;
                     border-radius: 1.2rem;
-                    font-size: 1.8rem;
+                    font-size: 2rem;
+                    cursor: pointer;
                 }
             }
         }
@@ -163,48 +162,58 @@
 
 /*MEDIA QUERY ABOUT*/
 
-@media screen and (max-width:720px) {
+/*DESKTOP*/
+
+@media screen and (max-width:1024px) {
 
     /*Media query for band information*/
 
     .band {
+
         &__information {
+
             h1 {
-                @include tittles-texts ($font-size:4em, $letter-spacing: 1rem, $text-align:center);
+                @include tittles-texts ($font-size:4em, $letter-spacing: 1rem);
             }
 
             .band__p {
-                @include tittles-texts ($font-size:2em, $letter-spacing: 0.1rem, $text-align:center);
-                padding-top: map-get($paddings, large);
-                padding-bottom: map-get($paddings, large);
-                padding-left: map-get($paddings, large);
-                padding-right: map-get($paddings, large);
+                @include tittles-texts ($font-style: normal, $font-size:2.2em, $letter-spacing: 0.1rem, $text-align:justify);
+                margin: 0 4rem;
             }
 
             p {
-                @include tittles-texts ($font-size:1.6em, $letter-spacing: 0.1rem, $text-align:justify);
-                padding-left: map-get($paddings, large);
-                padding-right: map-get($paddings, large);
-                padding-bottom: map-get($paddings, small);
+                margin: 0 4rem;
             }
 
             h3 {
                 padding-bottom: map-get($paddings, large);
             }
         }
+    }
+}
 
-        &__img {
-            padding-left: map-get($paddings, xlarge);
-            padding-right: map-get($paddings, xlarge);
-            padding-top: map-get($paddings, medium);
-            padding-bottom: map-get($paddings, medium);
+/*TABLET*/
+
+@media screen and (max-width:720px) {
+
+    .band {
+
+        &__information {
+            h1 {
+                @include tittles-texts ($font-size:3.5em, $letter-spacing: 1rem);
+            }
+
+            h3 {
+                font-size: 2.8em;
+            }
         }
     }
 
-    /*Media query for members presentation*/
-
     .members {
 
+        &__tittle {
+            font-size: 2.5em;
+        }
 
         &__presentation {
             display: grid;
@@ -216,9 +225,147 @@
 
             .members__information {
 
+                .members__img {
+                    width: 60%;
+                    padding: map-get($paddings, xsmall);
+                }
+
                 .members__description {
                     font-size: 1.6em;
-                    padding: map-get($paddings, large);
+                    margin: 0 6rem;
+                    padding-bottom: map-get($paddings, small);
+                }
+            }
+        }
+    }
+}
+
+/*MOBILE*/
+
+@media screen and (max-width:480px) {
+
+    .band {
+        margin-top: 1rem;
+
+        &__information {
+
+            h1 {
+                @include tittles-texts ($font-style: normal, $font-size:3em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
+            }
+
+            .band__p {
+                @include tittles-texts ($font-style: normal, $font-size:2em, $letter-spacing: 0.1rem, $text-align:justify);
+                margin: 0 2.5rem;
+            }
+
+            p {
+                @include tittles-texts ($font-style: normal, $font-size:1.8em, $letter-spacing: 0.1rem, $text-align:justify);
+                padding-bottom: map-get($paddings, large);
+                margin: 0 2.5rem;
+            }
+
+            h3 {
+                @include tittles-texts ($font-style:normal, $font-size:2.5em, $letter-spacing: 0.3rem, $text-align:center);
+                padding-bottom: map-get($paddings, xlarge);
+            }
+        }
+
+        &__img {
+            width: 100%;
+            padding-left: map-get($paddings, xlarge);
+            padding-right: map-get($paddings, xlarge);
+        }
+    }
+
+    .members {
+
+        &__presentation {
+
+            .members__information {
+                .members__name {
+                    font-size: 2rem;
+                }
+
+                .members__description {
+                    margin: 0 4rem;
+                    padding-bottom: map-get($paddings, small);
+
+                }
+            }
+        }
+    }
+}
+
+/*Media query for newsletter*/
+
+.newsletter {
+
+    .form {
+        padding: map-get($paddings, small);
+        padding-bottom: map-get($paddings, large);
+
+        .form__p {
+            font-size: 1.9em;
+        }
+    }
+}
+
+/*SMALL MOBILE*/
+
+@media screen and (max-width:360px) {
+
+    .band {
+
+        &__information {
+
+            h1 {
+                @include tittles-texts ($font-style: normal, $font-size:2.5em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
+            }
+
+            .band__p {
+                @include tittles-texts ($font-style: normal, $font-size:1.7em, $letter-spacing: -0.01rem, $text-align:justify);
+                margin: 0 1.9rem;
+            }
+
+            p {
+                @include tittles-texts ($font-style: normal, $font-size:1.7em, $letter-spacing: -0.01rem, $text-align:justify);
+                padding-bottom: map-get($paddings, large);
+                margin: 0 1.9rem;
+            }
+
+            h3 {
+                @include tittles-texts ($font-style:normal, $font-size:2em, $letter-spacing: 0.3rem, $text-align:center);
+                padding-bottom: map-get($paddings, xlarge);
+            }
+        }
+
+        &__img {
+            width: 100%;
+            padding-left: map-get($paddings, large);
+            padding-right: map-get($paddings, large);
+        }
+    }
+
+    .members {
+
+        padding-top: map-get($paddings, tiny);
+
+        &__tittle {
+            font-size: 2.1em;
+        }
+
+        &__presentation {
+
+            .members__information {
+
+                .members__name {
+                    font-size: 1.8em;
+                }
+
+                .members__description {
+                    font-size: 1.6em;
+                    margin: 0 1.9rem;
+                    padding-bottom: map-get($paddings, small);
                 }
             }
         }
@@ -227,9 +374,108 @@
     /*Media query for newsletter*/
 
     .newsletter {
+
         .form {
-            padding: map-get($paddings, large);
+            padding: map-get($paddings, small);
             padding-bottom: map-get($paddings, large);
+
+            .form__p {
+                font-size: 1.6em;
+                padding: map-get($paddings, xsmall)
+            }
+
+            .contact__form {
+
+                padding: map-get($paddings, tiny);
+
+                .contact__sector {
+                    padding-bottom: map-get($paddings, small);
+
+                    .contact__input {
+                        font-size: 1.7em;
+                    }
+
+                    .contact__inside {
+                        text-align: left;
+                        font-size: 1.6em;
+                        padding: map-get($paddings, tiny);
+                    }
+
+                    .contact__checkbox {
+                        font-size: 1.3rem;
+                    }
+                }
+
+                .form__button {
+
+                    .button_letter {
+                        padding: .5rem 5rem;
+                        font-size: 1.7em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*SMALL PHONE - SAMSUNG FOLD*/
+
+@media screen and (max-width:280px) {
+
+    .band {
+        margin-top: 0;
+
+        &__information {
+            margin: 1rem;
+
+            h1 {
+                font-size: 2.2em;
+            }
+        }
+    }
+
+    .newsletter {
+
+        .form {
+            padding: map-get($paddings, tiny);
+            padding-bottom: map-get($paddings, small);
+
+            .form__p {
+                font-size: 1.5em;
+                padding: map-get($paddings, tiny)
+            }
+
+            .contact__form {
+
+                padding: map-get($paddings, tiny);
+
+                .contact__sector {
+                    padding-bottom: map-get($paddings, tiny);
+
+                    .contact__input {
+                        font-size: 1.5em;
+                    }
+
+                    .contact__inside {
+                        text-align: left;
+                        font-size: 1.4em;
+                        padding: map-get($paddings, tiny);
+                    }
+
+                    .contact__checkbox {
+                        font-size: 1.4rem;
+                    }
+                }
+
+                .form__button {
+                    padding-top: 1rem;
+
+                    .button_letter {
+                        padding: .5rem 4rem;
+                        font-size: 1.7em;
+                    }
+                }
+            }
         }
     }
 }

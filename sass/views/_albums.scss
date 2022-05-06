@@ -1,17 +1,28 @@
 /*ALBUMS*/
 
-.playlist {
+.albumstittle {
 
+    &__h1 {
+        @include tittles-texts ($font-style: normal, $font-size:5em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
+        font-family: $font-secondary;
+    }
+
+    &__p {
+        @include tittles-texts ($font-style: normal, $font-size:2.2em, $letter-spacing: 0.1rem, $text-align:center);
+        color: rgb(217, 125, 217);
+    }
+}
+
+.playlist {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
     justify-content: center;
     gap: 4rem;
     padding: map-get($paddings, small);
     padding-bottom: map-get($paddings, xxxlarge);
     background-color: map-get($background-color, lightblack);
     border-radius: 2rem;
-
 
     &__h2 {
         font-size: 2.2em;
@@ -28,40 +39,94 @@
 
 /*MEDIA QUERY MEDIA*/
 
+/*DESKTOP*/
+
 @media screen and (max-width:1024px) {
 
-    .playlist {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-        justify-content: center;
+    .albumstittle {
 
+        &__h1 {
+            @include tittles-texts ($font-style: normal, $font-size:4em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
+        }
+
+        &__p {
+            @include tittles-texts ($font-style: normal, $font-size:2em, $letter-spacing: 0.1rem, $text-align:center);
+            color: rgb(217, 125, 217);
+        }
     }
 }
 
-@media screen and (max-width:720px) {
-    .band {
-        &__information {
-            h1 {
-                @include tittles-texts ($font-size:4em, $letter-spacing: 1rem, $text-align:center);
-            }
+/*TABLET*/
 
-            .band__p {
-                @include tittles-texts ($font-size:2em, $letter-spacing: 0.1rem, $text-align:center);
-                padding-top: map-get($paddings, small);
-                padding-bottom: map-get($paddings, small);
-                padding-left: map-get($paddings, small);
-                padding-right: map-get($paddings, small);
-            }
+@media screen and (max-width:720px) {
+
+    .gallerytittle {
+
+        &__h1 {
+            @include tittles-texts ($font-style: normal, $font-size:3em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
         }
 
+        &__p {
+            @include tittles-texts ($font-style: normal, $font-size:1.9em, $letter-spacing: 0.1rem, $text-align:center);
+            color: rgb(217, 125, 217);
+        }
+    }
+
+    .playlist {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        justify-content: center;
+    }
+}
+
+/*MOBILE*/
+
+@media screen and (max-width:480px) {
+
+    .albumstittle {
+
+        &__h1 {
+            @include tittles-texts ($font-style: normal, $font-size:2.5em, $font-weight: lighter, $letter-spacing: 1rem, $text-align:center);
+        }
+
+        &__p {
+            @include tittles-texts ($font-style: normal, $font-size:1.8em, $letter-spacing: 0.1rem, $text-align:center);
+            color: rgb(217, 125, 217);
+            margin: 2rem;
+        }
+    }
+
+    .playlist {
+
+        &__h2 {
+            font-size: 2em;
+        }
+    }
+}
+
+/*SMALL MOBILE*/
+
+@media screen and (max-width:360px) {
+
+    .albumstittle {
         
+        &__p {
+            @include tittles-texts ($font-style: normal, $font-size:1.8em, $letter-spacing: 0.1rem, $text-align:center);
+            color: rgb(217, 125, 217);
+        }
     }
     .playlist {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(4, 1fr);
-            justify-content: center;
 
+        &__h2 {
+            font-size: 1.9em;
+            padding-top: 1.9rem;
         }
+    }
+}
+
+/*SMALL PHONE - SAMSUNG FOLD*/
+
+@media screen and (max-width:280px){
+    
 }
